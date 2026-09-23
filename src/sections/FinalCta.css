@@ -1,0 +1,65 @@
+.final {
+  position: relative;
+  overflow: hidden;
+  margin-top: 138px;
+  padding: 9px 0 79px;
+}
+
+/* Tall source-sized background, clipped to the section */
+.final__circuit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1269px;
+  z-index: 0;
+}
+
+.final__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.final__title {
+  max-width: 900px;
+  color: var(--color-accent-2);
+}
+
+.final__text {
+  max-width: 537px;
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 600;
+}
+
+.final__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 27px;
+  margin-top: 28px;
+}
+
+.final__note {
+  max-width: 333px;
+  margin-top: 25px;
+}
+
+@media (max-width: 639px) {
+  .final {
+    margin-top: 80px;
+  }
+
+  .final__text {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .final__actions {
+    width: 100%;
+    gap: 16px;
+  }
+}

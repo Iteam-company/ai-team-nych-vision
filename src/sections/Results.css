@@ -1,0 +1,134 @@
+.results {
+  padding-top: 46px;
+}
+
+.results__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 386px);
+  column-gap: 64px;
+  row-gap: 30px;
+  margin-top: 46px;
+}
+
+/* Source layout has slightly offset cards; kept for a 1:1 match */
+.results__grid .stat:nth-child(2) {
+  transform: translateY(-10px);
+}
+
+.results__grid .stat:nth-child(4) {
+  margin-left: -14px;
+}
+
+.stat {
+  height: 263px;
+  border: 1px solid var(--color-light-border);
+  border-radius: var(--radius);
+}
+
+.stat__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 144px;
+  margin: -1px -1px 0;
+  padding-top: 32px;
+  background: var(--color-accent);
+  border: 1px solid var(--color-light-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  text-align: center;
+}
+
+.stat__value {
+  display: flex;
+  gap: 4px;
+  font-size: 55px;
+  line-height: 58px;
+  font-weight: 600;
+}
+
+.stat__caption {
+  margin-top: 5px;
+}
+
+.stat__body {
+  padding: 21px 36px 0;
+}
+
+.stat__text {
+  max-width: 290px;
+  margin-top: 8px;
+}
+
+.results__guarantees {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 47px;
+}
+
+.results__icon {
+  flex-shrink: 0;
+}
+
+.results__guarantee {
+  margin: 9px 0 0 21px;
+}
+
+.results__guarantee:nth-of-type(1) {
+  width: 220px;
+  margin-right: 59px;
+}
+
+.results__guarantee:nth-of-type(2) {
+  width: 377px;
+}
+
+.results__cta {
+  margin-top: 54px;
+}
+
+@media (max-width: 959px) {
+  .results .h-section {
+    text-align: center;
+  }
+
+  .results__grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 386px));
+    justify-content: center;
+    column-gap: 30px;
+  }
+
+  .results__grid .stat:nth-child(2) {
+    transform: none;
+  }
+
+  .results__grid .stat:nth-child(4) {
+    margin-left: 0;
+  }
+
+  .results__guarantees {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .results__guarantee,
+  .results__guarantee:nth-of-type(1),
+  .results__guarantee:nth-of-type(2) {
+    width: auto;
+    max-width: 380px;
+    margin: 0 0 16px;
+  }
+
+  .results__cta {
+    display: flex;
+    margin: 30px auto 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .stat__value {
+    font-size: 44px;
+  }
+}

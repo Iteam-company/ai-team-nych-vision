@@ -1,0 +1,37 @@
+.animated-line {
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+  animation: soft-flicker 3s ease-in-out infinite;
+}
+
+.animated-line path,
+.animated-line rect {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-dasharray: 30, 60;
+  stroke-dashoffset: 1000;
+  vector-effect: non-scaling-stroke;
+  animation: line-flow 10s linear infinite;
+}
+
+@keyframes line-flow {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes soft-flicker {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}

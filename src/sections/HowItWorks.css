@@ -1,0 +1,258 @@
+.how {
+  padding: 56px 0 61px;
+}
+
+.how__title {
+  max-width: 824px;
+  line-height: 55px;
+}
+
+.how__panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 562px 1fr;
+  min-height: 1134px;
+  margin-top: 40px;
+  border-radius: var(--radius);
+  isolation: isolate;
+}
+
+/* Outer panel: bleeds to the left edge, ends on the right */
+.how__panel::after {
+  content: '';
+  position: absolute;
+  inset: 0 57px 0 calc(50% - 50vw);
+  z-index: -1;
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(20px);
+}
+
+.how__panel.spotlight::before {
+  left: calc(50% - 50vw);
+  right: 57px;
+}
+
+.how__col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 27px;
+}
+
+/* Inner panel behind the left column */
+.how__col--dialog::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 50vw);
+  right: 75px;
+  z-index: -1;
+  background: var(--color-panel-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.how__col--dialog .how__col-title {
+  max-width: 430px;
+  color: var(--color-accent);
+}
+
+.how__col--crm {
+  --text-color: var(--color-text-muted);
+  color: var(--color-text-muted);
+}
+
+.how__col--crm .how__col-title {
+  max-width: 420px;
+  color: var(--color-text);
+}
+
+.how__list {
+  --timeline-gap: 30px;
+  --timeline-dot-top: 8px;
+  --timeline-indent: 36px;
+  margin-top: 25px;
+}
+
+.how__col--crm .how__list {
+  --timeline-color: var(--color-text);
+}
+
+.how__col--dialog .how__item-title {
+  max-width: 274px;
+}
+
+.how__col--dialog .how__item-note {
+  max-width: 230px;
+}
+
+.how__col--crm .how__item-title {
+  max-width: 329px;
+}
+
+.how__col--crm .how__item-note {
+  max-width: 277px;
+}
+
+.how__item-note {
+  margin-top: 10px;
+}
+
+.how__outcome {
+  max-width: 284px;
+  margin-top: 44px;
+  color: var(--color-accent);
+}
+
+.how__col--dialog .how__outcome {
+  max-width: 273px;
+}
+
+.how__media {
+  position: relative;
+  margin-top: auto;
+}
+
+.how__media--dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 0 25px 9px;
+}
+
+.how__media--dialog .ph:last-child {
+  margin-left: 58px;
+}
+
+.how__media--crm {
+  height: 301px;
+  margin-top: 51px;
+}
+
+.how__media--crm > * {
+  position: absolute;
+}
+
+.how__m1 {
+  top: 0;
+  left: -8px;
+}
+
+.how__m2 {
+  top: 81px;
+  left: -43px;
+}
+
+.how__m3 {
+  top: 170px;
+  left: 58px;
+}
+
+.how__connectors {
+  top: 34px;
+  left: 144px;
+}
+
+.how__m4 {
+  top: 69px;
+  left: 206px;
+}
+
+.how__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px;
+  margin-top: 44px;
+}
+
+@media (max-width: 1199px) {
+  .how__panel {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+  }
+
+  .how__panel::after,
+  .how__panel.spotlight::before {
+    right: 0;
+  }
+
+  .how__col--dialog::before {
+    right: -20px;
+  }
+
+  .how__m4 {
+    left: 120px;
+  }
+}
+
+@media (max-width: 959px) {
+  .how__title {
+    line-height: 44px;
+    text-align: center;
+  }
+
+  .how__panel {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    gap: 20px;
+  }
+
+  .how__panel::after,
+  .how__panel.spotlight::before,
+  .how__col--dialog::before {
+    display: none;
+  }
+
+  .how__col {
+    padding: 30px 24px;
+    background: var(--color-panel-strong);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  .how__col--crm {
+    background: var(--color-panel);
+  }
+
+  .how__media {
+    margin-top: 32px;
+  }
+
+  .how__media--dialog {
+    padding: 0;
+    align-items: center;
+  }
+
+  .how__media--dialog .ph:last-child {
+    margin-left: 0;
+  }
+
+  .how__media--crm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    height: auto;
+  }
+
+  .how__media--crm > * {
+    position: static;
+  }
+
+  .how__connectors {
+    display: none;
+  }
+
+  .how__actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 639px) {
+  .how__title {
+    line-height: 33px;
+  }
+}

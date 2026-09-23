@@ -1,0 +1,106 @@
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  width: 531px;
+  max-width: 100%;
+}
+
+.lead-form__input,
+.lead-form__phone {
+  height: 50px;
+  width: 100%;
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius);
+  color: var(--color-input-text);
+  font-size: 16px;
+}
+
+.lead-form__input {
+  padding: 0 20px;
+}
+
+.lead-form__input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.lead-form__input:focus,
+.lead-form__phone:focus-within {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.lead-form__label {
+  margin: 20px 0 5px;
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* react-phone-number-input */
+.lead-form__phone {
+  --PhoneInputCountrySelectArrow-color: var(--color-input-text);
+  --PhoneInputCountrySelectArrow-opacity: 0.6;
+  --PhoneInputCountryFlag-borderColor: transparent;
+  --PhoneInputCountryFlag-height: 1em;
+  --PhoneInput-color--focus: var(--color-accent);
+  padding: 0 16px;
+}
+
+.lead-form__phone.is-invalid {
+  border-color: var(--color-error);
+}
+
+.lead-form__phone .PhoneInputCountry {
+  margin-right: 10px;
+}
+
+.lead-form__phone .PhoneInputInput {
+  min-width: 0;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+.lead-form__error {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--color-error);
+}
+
+.lead-form__submit {
+  align-self: flex-start;
+  width: 220px;
+  height: 50px;
+  margin-top: 20px;
+  background: var(--color-accent);
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.lead-form__submit:hover {
+  filter: brightness(1.08);
+}
+
+.lead-form__success {
+  width: 531px;
+  max-width: 100%;
+  font-size: 20px;
+  line-height: 31px;
+  color: var(--color-text);
+}
+
+@media (max-width: 639px) {
+  .lead-form__submit {
+    width: 100%;
+  }
+}

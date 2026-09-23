@@ -1,0 +1,289 @@
+/* ---------- Tech canvas (hero constellation) ---------- */
+.tech-canvas {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  mask-image: radial-gradient(circle, #000 50%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle, #000 50%, transparent 75%);
+  pointer-events: none;
+}
+
+.tech-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- Glow scene (team background) ---------- */
+.glow-scene {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-deep);
+  filter: blur(80px);
+  transform: translateZ(0);
+  pointer-events: none;
+}
+
+.glow-scene__layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.glow-scene__layer--1 {
+  width: 180vw;
+  height: 120vh;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+  opacity: 0.6;
+  animation: glow-move 25s infinite alternate ease-in-out;
+}
+
+.glow-scene__layer--2 {
+  left: -20%;
+  width: 150vw;
+  height: 150vh;
+  background: radial-gradient(circle, var(--color-accent-strong) 0%, transparent 60%);
+  opacity: 0.4;
+  animation: glow-move 35s infinite alternate-reverse ease-in-out;
+}
+
+.glow-scene__layer--3 {
+  width: 130vw;
+  height: 100vh;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    var(--color-accent-soft),
+    transparent 30%,
+    var(--color-accent),
+    transparent
+  );
+  opacity: 0.3;
+  filter: blur(40px);
+  animation: glow-rotate 40s linear infinite;
+}
+
+.glow-scene__layer--core {
+  width: 80vw;
+  height: 80vw;
+  background: radial-gradient(
+    circle,
+    var(--color-accent-soft) 0%,
+    var(--color-accent) 50%,
+    transparent 100%
+  );
+  opacity: 0.7;
+  animation: glow-core 15s infinite alternate ease-in-out;
+}
+
+@keyframes glow-move {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate(-40%, -45%) rotate(10deg) scale(1.2);
+  }
+}
+
+@keyframes glow-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes glow-core {
+  0% {
+    transform: translate(-60%, -40%) scale(0.8);
+  }
+  100% {
+    transform: translate(-40%, -60%) scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .glow-scene {
+    filter: blur(60px);
+  }
+
+  .glow-scene__layer {
+    opacity: 0.5;
+  }
+}
+
+/* ---------- Wave orb ---------- */
+.wave-orb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wave-orb__defs {
+  position: absolute;
+}
+
+.wave-orb__body {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  will-change: transform;
+}
+
+.wave-orb__layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  transition: transform 0.2s ease-out;
+}
+
+.wave-orb__layer--rays1 {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    var(--color-accent-strong) 15%,
+    transparent 30%,
+    var(--color-accent) 50%,
+    transparent 70%,
+    var(--color-accent-soft) 90%,
+    transparent 100%
+  );
+  animation: orb-rotate 12s linear infinite;
+}
+
+.wave-orb__layer--rays2 {
+  scale: 1.1;
+  background: conic-gradient(
+    from 180deg,
+    transparent 0%,
+    var(--color-accent) 20%,
+    transparent 40%,
+    var(--color-accent-strong) 60%,
+    transparent 80%,
+    #ffffff 95%,
+    transparent 100%
+  );
+  animation: orb-rotate 8s linear infinite reverse;
+}
+
+.wave-orb__layer--core {
+  scale: 0.7;
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    var(--color-accent-soft) 30%,
+    var(--color-accent-strong) 60%,
+    transparent 100%
+  );
+}
+
+@keyframes orb-rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* ---------- Circuit lines ---------- */
+.circuit {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.circuit svg {
+  width: 100%;
+  height: 100%;
+  animation: circuit-drift 15s ease-in-out infinite alternate;
+}
+
+.circuit__lines path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.03);
+  stroke-width: 1;
+}
+
+.circuit__dot {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 3px #ffffff);
+  offset-rotate: auto;
+  animation: circuit-dot 4s linear infinite;
+}
+
+.circuit__dot--2 {
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.circuit__dot--3 {
+  animation-duration: 5s;
+  animation-delay: 0.5s;
+}
+
+.circuit__dot--4 {
+  animation-duration: 3.5s;
+  animation-delay: 2s;
+}
+
+@keyframes circuit-dot {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  5%,
+  95% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes circuit-drift {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-10px, -5px) scale(1.02);
+  }
+}
+
+/* ---------- Spotlight border (pair with trackSpotlight) ---------- */
+.spotlight {
+  position: relative;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border: 3px solid var(--color-accent);
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  -webkit-mask-image: radial-gradient(
+    circle 150px at var(--x, 50%) var(--y, 50%),
+    #000 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle 150px at var(--x, 50%) var(--y, 50%),
+    #000 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}

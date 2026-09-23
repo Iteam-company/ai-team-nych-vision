@@ -1,0 +1,76 @@
+/*
+ * Design tokens.
+ * Every color used on the page lives here, so the palette can be swapped
+ * by editing this file only.
+ */
+:root {
+  /* Base */
+  --color-bg: #131313;
+  --color-bg-deep: #000000;
+  --color-surface: #2f2f2f;
+  --color-surface-soft: rgba(47, 47, 47, 0.75);
+  --color-panel: rgba(255, 255, 255, 0.02);
+  --color-panel-strong: rgba(255, 255, 255, 0.05);
+  --color-border: #414141;
+
+  /* Light section */
+  --color-light-bg: #f0f0f0;
+  --color-light-border: #c0c0c0;
+  --color-light-border-soft: #e6e6e6;
+
+  /* Text */
+  --color-text: #ffffff;
+  --color-text-muted: #f0f0f0;
+  --color-text-dark: #2f2f2f;
+
+  /* Primary accent */
+  --color-accent: #1388df;
+  --color-accent-rgb: 62, 105, 144;
+  --color-accent-strong: #3a7cc4;
+  --color-accent-hot: #2c82d9;
+  --color-accent-soft: #a9c7e3;
+  --color-accent-deep: rgba(38, 72, 104, 0.96);
+
+  /* Secondary accent (cyan, final CTA) */
+  --color-accent-2: #43d1f8;
+  --color-accent-2-contrast: #282828;
+
+  /* Form */
+  --color-input-bg: #c6c6c6;
+  --color-input-border: #c8c8c8;
+  --color-input-text: #000000;
+  --color-error: #e5484d;
+
+  /* Overlay */
+  --color-overlay: rgba(0, 0, 0, 0.8);
+  --color-popup-border: #bababa;
+  --color-popup-bg: rgba(19, 19, 19, 0.6);
+
+  /* Image placeholders */
+  --color-ph-bg: rgba(255, 255, 255, 0.04);
+  --color-ph-border: rgba(255, 255, 255, 0.22);
+  --color-ph-text: rgba(255, 255, 255, 0.5);
+  --color-ph-bg-light: rgba(0, 0, 0, 0.04);
+  --color-ph-border-light: rgba(0, 0, 0, 0.2);
+  --color-ph-text-light: rgba(0, 0, 0, 0.45);
+
+  /* Gradients */
+  --gradient-pain: linear-gradient(
+    52.56deg,
+    #393939 0%,
+    var(--color-accent-deep) 26%,
+    var(--color-accent-hot) 65%,
+    #262626 100%
+  );
+
+  /* Footer*/
+  --footer-bg: #080808;
+
+  /* Typography */
+  --font-base: "Manrope", Arial, sans-serif;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: 20px;
+  --radius: 20px;
+}

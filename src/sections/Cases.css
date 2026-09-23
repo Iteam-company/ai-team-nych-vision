@@ -1,0 +1,275 @@
+.cases {
+  padding: 125px 0 50px;
+}
+
+.cases__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 54px;
+}
+
+.cases__tab {
+  width: 46px;
+  height: 47px;
+  background: transparent;
+  border: 1px solid var(--color-light-border);
+  border-radius: var(--radius);
+  color: var(--color-light-border);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.cases__tab.is-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.cases__stage {
+  position: relative;
+  display: grid;
+  align-items: start;
+  min-height: 531px;
+  margin-top: 22px;
+}
+
+/* All cards share one grid cell; the tallest one sets the stage height */
+.case {
+  position: relative;
+  grid-area: 1 / 1;
+  width: 1001px;
+  padding-bottom: 32px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-light-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+
+.case.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Soft orange light that follows the cursor */
+.case__glow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.case__glow::after {
+  content: '';
+  position: absolute;
+  left: var(--x, -1000px);
+  top: var(--y, -1000px);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(var(--color-accent-rgb), 0.8) 0%, rgba(var(--color-accent-rgb), 0) 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.case:hover .case__glow::after {
+  opacity: 0.6;
+}
+
+.case__content {
+  position: relative;
+  z-index: 1;
+  padding: 32px 0 0 100px;
+}
+
+.case__title {
+  max-width: 520px;
+  font-size: 39px;
+  line-height: 41px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.case:nth-child(7) .case__title {
+  max-width: 669px;
+}
+
+.case--long-title .case__title {
+  font-size: 26px;
+  line-height: 27px;
+}
+
+.case__metric {
+  max-width: 417px;
+  margin-top: 19px;
+  font-size: 22px;
+  line-height: 31px;
+}
+
+.case__metric.t-body {
+  font-size: 15px;
+  line-height: 23px;
+}
+
+.case__label {
+  margin-top: 18px;
+  color: var(--color-accent);
+}
+
+.case__tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.case__task {
+  display: flex;
+  align-items: flex-start;
+  gap: 21px;
+  max-width: 470px;
+}
+
+.case__task > span:last-child {
+  max-width: 360px;
+}
+
+/* Small "switched on" toggle */
+.case__toggle {
+  position: relative;
+  flex-shrink: 0;
+  width: 35px;
+  height: 20px;
+  background: var(--color-accent);
+  border-radius: 10px;
+}
+
+.case__toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 14px;
+  height: 14px;
+  background: var(--color-text);
+  border-radius: 50%;
+}
+
+.case__media {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.case__shot {
+  position: absolute;
+  background-color: var(--color-surface);
+}
+
+.case__orb {
+  position: absolute;
+  top: 32px;
+  left: 630px;
+  width: 300px;
+  height: 487px;
+  pointer-events: auto;
+}
+
+.cases__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+  margin-top: 40px;
+}
+
+@media (max-width: 1199px) {
+  .case {
+    width: 100%;
+  }
+
+  .case__media {
+    left: auto;
+    width: 45%;
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+
+  .case__shot {
+    left: 20px !important;
+    top: 20px !important;
+    width: calc(100% - 40px) !important;
+    height: calc(100% - 40px) !important;
+  }
+
+  .case__shot ~ .case__shot {
+    display: none;
+  }
+
+  .case__orb {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .case__content {
+    padding-left: 40px;
+    max-width: 55%;
+  }
+}
+
+@media (max-width: 959px) {
+  .cases .h-section {
+    text-align: center;
+  }
+
+  .cases__tabs {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .case {
+    min-height: 0 !important;
+  }
+
+  .case__content {
+    max-width: none;
+    padding: 30px 24px;
+  }
+
+  .case__title {
+    font-size: 28px;
+    line-height: 31px;
+  }
+
+  .case__metric {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .case__media {
+    position: relative;
+    width: auto;
+    height: 320px;
+    margin: 0 24px 24px;
+  }
+
+  .case__shot {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .cases__actions {
+    justify-content: center;
+  }
+}

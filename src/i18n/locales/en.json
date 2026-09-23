@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "title": "Nychvision — AI Sales Assistants",
+    "description": "Implementing AI managers is guaranteed to raise conversion and automate and optimize your sales processes."
+  },
+  "common": {
+    "language": "Language",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "hero": {
+    "title": "Double the ROI of your sales team with an <accent>AI salesperson</accent>",
+    "subtitle": "The AI salesperson answers, qualifies and sells — 24/7, with no human factor",
+    "stats": [
+      "<accent><b>+50%</b></accent> conversion → thanks to instant replies",
+      "<accent><b>–30%</b></accent> sales department costs → part of the work is done by AI",
+      "<accent><b>1000+</b></accent> conversations at once"
+    ],
+    "cta": "Get a test salesperson",
+    "ctaNote": "We'll build a test AI salesperson <b>FOR FREE</b>"
+  },
+  "features": {
+    "agentTitle": "An AI agent that:",
+    "agentText": "Talks to and qualifies clients, books meetings and services, takes payments and collects reviews, moves leads through your CRM, works 24/7",
+    "integrationsTitle": "Integrates",
+    "integrationsText": "with all popular platforms",
+    "integrationsMore": "...and many others.<br/>Ask our manager<br/>for details"
+  },
+  "pain": {
+    "title": "Weak spots in sales that cost you money every day",
+    "cards": [
+      {
+        "title": "You pay for traffic,<br/>but lose leads",
+        "lead": "Some clients leave before the first contact",
+        "items": [
+          "managers can't keep up with replies",
+          "leads are processed with a delay",
+          "the client goes to whoever answered faster."
+        ]
+      },
+      {
+        "title": "The cost of mistakes grows,<br/>and control drops",
+        "lead": "Every missed lead costs more and more",
+        "items": [
+          "traffic costs keep rising",
+          "some inquiries are lost at the entry point",
+          "you can't see where exactly the funnel “leaks”"
+        ]
+      },
+      {
+        "title": "Manual qualification<br/>eats up the budget",
+        "lead": "Managers spend their time on anything but sales",
+        "items": [
+          "the same questions over and over",
+          "“empty” leads",
+          "trying to push those who aren't ready"
+        ]
+      },
+      {
+        "title": "Results depend on people,<br/>not on the system",
+        "lead": "Sales are unstable and unpredictable",
+        "items": [
+          "varying speed and quality of communication",
+          "fatigue, burnout, turnover",
+          "deals don't get “closed”"
+        ]
+      }
+    ]
+  },
+  "how": {
+    "title": "How an <accent>AI agent</accent> boosts sales efficiency",
+    "dialog": {
+      "title": "In conversations with clients the AI agent:",
+      "items": [
+        {
+          "title": "<b>Instantly</b> answers 100% of inquiries — 24/7",
+          "note": "→ clients don't leave for competitors because of waiting"
+        },
+        {
+          "title": "<b>Asks</b> questions itself and identifies needs",
+          "note": "→ managers don't waste time on “cold” and irrelevant leads"
+        },
+        {
+          "title": "<b>Handles</b> typical objections and leads to the next step",
+          "note": "→ more clients make it to a meeting or booking"
+        },
+        {
+          "title": "<b>Understands</b> context, voice and images",
+          "note": "→ the conversation feels “alive”, not like a bot"
+        }
+      ],
+      "outcome": "What you get is a qualified client, not just a chat."
+    },
+    "crm": {
+      "title": "In CRM and processes the AI agent:",
+      "items": [
+        {
+          "title": "<b>Automatically</b> records all client data in the CRM",
+          "note": "→ not a single lead is lost or “forgotten”"
+        },
+        {
+          "title": "The entire conversation history and funnel stages —<b> under your control</b>",
+          "note": "→ you see where and why deals are lost"
+        },
+        {
+          "title": "<b>Moves deals</b> through funnel stages by your rules",
+          "note": "→ the sales process becomes systematic, not chaotic"
+        },
+        {
+          "title": "<b>Schedules</b> the next step automatically",
+          "note": "→ booking / meeting / handoff to a manager at the right moment"
+        }
+      ],
+      "outcome": "Your sales team stops depending on people's discipline."
+    }
+  },
+  "cta": {
+    "consultation": "Get an implementation consultation",
+    "demo": "Book a demo",
+    "bookConsultation": "Book a consultation",
+    "estimate": "Estimate project cost"
+  },
+  "results": {
+    "title": "Right after implementation you get:",
+    "cards": [
+      {
+        "value": ["+", "40", "%"],
+        "caption": "conversion",
+        "title": "+30–50% lead conversion",
+        "text": "thanks to instant response and guiding to the next step (booking/meeting)."
+      },
+      {
+        "value": ["savings"],
+        "caption": "on sales team payroll",
+        "title": "The main workload shifts",
+        "text": "from managers to AI."
+      },
+      {
+        "value": ["5x"],
+        "caption": "lower cost",
+        "title": "Lower cost",
+        "text": "of a qualified client by 3–6x."
+      },
+      {
+        "value": ["24", "/", "7"],
+        "caption": "operation",
+        "title": "Thousands of conversations at once",
+        "text": "24/7 and in any language in the world — no queues."
+      }
+    ],
+    "guarantees": [
+      "Our technical <m>support and guarantee</m> under contract",
+      "You can <m>take over</m> the conversation <m>at any moment</m> <m>and control the logic</m> of the funnel"
+    ]
+  },
+  "cases": {
+    "title": "Successful AI-assistant implementations",
+    "tasksLabel": "AI consultant's tasks:",
+    "items": [
+      {
+        "title": "Developer and real estate agency in the UAE",
+        "metric": "— Conversion to qualified lead grew <b>from 20% to 60%</b><br/>— Conversion to meeting is<b> 21%</b><br/>— Deal cycle shortened <b>to 1.5 months</b>",
+        "tasks": [
+          "Processing leads in Bitrix24 CRM",
+          "Qualifying clients and sending matching property options",
+          "Scheduling meetings with an agent and booking time in Google Calendar",
+          "Filling in client cards in the CRM and moving them through deal stages"
+        ]
+      },
+      {
+        "title": "Permanent makeup studio in Spain",
+        "metric": "Conversion to a paid trial visit <b>26%</b>",
+        "tasks": [
+          "Processing incoming leads in Kommo CRM",
+          "Booking services in the Altegio booking system",
+          "Sending payment links",
+          "Filling in client cards in the CRM and moving them through deal stages"
+        ]
+      },
+      {
+        "title": "Inspection of apartments, houses, cottages and commercial real estate with expert assessment across Russia",
+        "metric": "Conversion to a service booking from all leads <b>51.5%</b>",
+        "tasks": [
+          "Consulting clients on service pricing in amoCRM",
+          "Booking free slots in Yclients",
+          "Filling in client cards in the CRM and moving them through deal stages",
+          "Reminding clients about their visit"
+        ]
+      },
+      {
+        "title": "Cosmetology clinic in Israel",
+        "metric": "Booking conversion for new clients <b>40.2%</b>, returning clients <b>23.6%</b>",
+        "tasks": [
+          "Processing incoming leads in amoCRM",
+          "Finding free slots and booking services in Google Calendar",
+          "Sending reminders",
+          "Filling in client cards in the CRM and moving them through deal stages",
+          "Working with the base of new and returning clients"
+        ]
+      },
+      {
+        "title": "Travel company in the UAE",
+        "metric": "Conversion to the first meeting <b>35–55%</b>",
+        "tasks": [
+          "Processing 100% of leads in WhatsApp and Telegram 24/7",
+          "Qualifying leads: clarifies dates, budget, family composition and client wishes.",
+          "Selecting and sending up-to-date tour options like an experienced agent.",
+          "Booking a meeting in Google Calendar",
+          "Entering client data into Bitrix24 and moving it through the sales funnel"
+        ]
+      },
+      {
+        "title": "RBmotors ATV manufacturing and sales",
+        "metric": "<b>100%</b> of incoming leads are handled by the AI manager",
+        "tasks": [
+          "Consulting on ATV models and additional equipment",
+          "Arranging test-drive meetings",
+          "Filling in client cards in amoCRM and moving leads through deal stages",
+          "Notifying managers about new leads with an agreed meeting time"
+        ]
+      },
+      {
+        "title": "<b>RACUS group of Russian state universities</b>",
+        "metric": "<b>100%</b> of incoming leads are handled by the AI manager",
+        "tasks": [
+          "Helping choose universities and study programs",
+          "Simplifying applications and managing student data in the CRM",
+          "Capacity to handle 400,000 requests per season",
+          "Multilingual support (Arabic, English, French, Spanish, Portuguese, Chinese)"
+        ]
+      },
+      {
+        "title": "REAKTIV ski apparel brand",
+        "metric": "Conversion to sale <b>26.5%</b>",
+        "tasks": [
+          "Consulting clients<br/>on products, promotions, sizes and clothing features",
+          "Promoting products on Wildberries and Ozon",
+          "Redirecting complex requests to a manager to keep customers satisfied"
+        ]
+      }
+    ]
+  },
+  "team": {
+    "title": "About the Nychvision team",
+    "p1": "<b>Our team of IT specialists and prompt engineers works with sales departments, </b>support and recruiting, implementing AI as part of the system rather than a standalone tool.",
+    "p2": "Members of the Robotics and AI Committee at the International Congress of Industrialists and Entrepreneurs (ICIE).",
+    "count": "200",
+    "countText": "<b>AI implementations </b>with measurable results in revenue and conversion"
+  },
+  "clients": {
+    "title": "Trusted by"
+  },
+  "stages": {
+    "title": "Implementation stages",
+    "items": [
+      {
+        "title": "Analysis and preparation",
+        "duration": "2–3 days",
+        "text": "Audit of current processes, goals, channels, CRM, “leak” points and qualification requirements."
+      },
+      {
+        "title": "Solution architecture",
+        "duration": "1–2 days",
+        "text": "We design the customer journey and logic: how the AI works and when it hands the lead over to a manager."
+      },
+      {
+        "title": "Development",
+        "duration": "5–7 days",
+        "text": "Scenarios, knowledge base, rules, tone of voice, limitations, FAQ."
+      },
+      {
+        "title": "Integrations and business processes",
+        "duration": "1–2 days",
+        "text": "We connect CRM/website/messengers/social media and set up automation."
+      },
+      {
+        "title": "Testing and debugging",
+        "duration": "5–7 days",
+        "text": "We check quality, fix errors and bring it to stable operation."
+      },
+      {
+        "title": "Final refinements and launch",
+        "duration": "2–3 days",
+        "text": "Training your team, checklist, launch and monitoring of the first results."
+      }
+    ]
+  },
+  "contact": {
+    "title": "<b>Still have questions?</b><br/><b>Contact us!</b>"
+  },
+  "form": {
+    "namePlaceholder": "What's your name?",
+    "phoneLabel": "Your phone number",
+    "submit": "Send",
+    "success": "Thank you! We'll get in touch shortly.",
+    "phoneInvalid": "Please enter a valid phone number"
+  },
+  "finalCta": {
+    "title": "<b>Stop losing clients and take the load off your sales team</b>",
+    "text": "In 15–20 minutes we'll show you a demo: how the AI answers, qualifies, records data in the CRM and brings the client to a booking/meeting. We'll suggest which scenarios will have the biggest impact in your niche.",
+    "note": "Contractual guarantee and a 100% refund if you're not happy with the result"
+  },
+  "popup": {
+    "title": "<b>Leave a request</b>",
+    "text": "<b>We'll contact you </b><accent><b>within 10 seconds</b></accent><b> in a messenger (WhatsApp/Telegram) and pick a convenient time for a meeting.</b>"
+  },
+  "footer": {
+    "company": "NYCHVISION OÜ",
+    "registryCode": "Registry code",
+    "address": "Address",
+    "email": "E-mail address"
+  }
+}
