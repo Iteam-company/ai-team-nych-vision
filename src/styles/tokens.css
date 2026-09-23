@@ -14,7 +14,7 @@
   --color-border: #414141;
 
   /* Light section */
-  --color-light-bg: #f0f0f0;
+  --color-light-bg: #dff9ff;
   --color-light-border: #c0c0c0;
   --color-light-border-soft: #e6e6e6;
 
@@ -42,9 +42,9 @@
   --color-error: #e5484d;
 
   /* Overlay */
-  --color-overlay: rgba(0, 0, 0, 0.8);
+  --color-overlay: rgba(0, 0, 0, 0.95);
   --color-popup-border: #bababa;
-  --color-popup-bg: rgba(19, 19, 19, 0.6);
+  --color-popup-bg: rgba(19, 19, 19);
 
   /* Image placeholders */
   --color-ph-bg: rgba(255, 255, 255, 0.04);

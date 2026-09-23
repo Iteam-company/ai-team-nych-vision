@@ -236,8 +236,20 @@
     gap: 12px;
   }
 
+  .cases {
+    padding-top: 80px;
+  }
+
   .case {
     min-height: 0 !important;
+  }
+
+  .case:not(.is-active) {
+    display: none;
+  }
+
+  .case.is-active {
+    animation: case-in 0.5s ease;
   }
 
   .case__content {
@@ -271,5 +283,40 @@
 
   .cases__actions {
     justify-content: center;
+  }
+}
+
+@keyframes case-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (max-width: 639px) {
+  .cases__tabs {
+    gap: 10px;
+  }
+
+  .case__content {
+    padding: 28px 20px;
+  }
+
+  .case__title {
+    font-size: 26px;
+    line-height: 29px;
+  }
+
+  .case__task {
+    gap: 14px;
+  }
+
+  .case__media {
+    height: 240px;
+    margin: 0 20px 20px;
+  }
+
+  .cases__actions {
+    gap: 14px;
   }
 }

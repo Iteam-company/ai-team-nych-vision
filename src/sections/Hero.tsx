@@ -26,8 +26,6 @@ export default function Hero() {
             height={30}
             className="hero__logo"
           />
-          {/* <ImagePlaceholder label="ICIE" width={59} height={57} className="hero__icie" />
-          <p className="hero__badge">{t('hero.badge')}</p> */}
           <LanguageSwitcher className="hero__lang" />
         </header>
 

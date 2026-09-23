@@ -183,8 +183,35 @@
     right: -20px;
   }
 
-  .how__m4 {
-    left: 120px;
+  .how__media--crm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    height: auto;
+    padding-bottom: 30px;
+  }
+
+  .how__media--crm > * {
+    position: static;
+  }
+
+  .how__media--crm .how__m4 {
+    width: 100% !important;
+    max-width: 350px;
+  }
+
+  .how__connectors {
+    display: none;
+  }
+
+  .how__media--dialog .ph {
+    width: 100% !important;
+    max-width: 383px;
+  }
+
+  .how__media--dialog .ph:last-child {
+    margin-left: 0;
   }
 }
 

@@ -1,0 +1,315 @@
+{
+  "meta": {
+    "title": "Nychvision — Virtuaalsed tehisintellektil põhinevad AI-assistendid",
+    "description": "AI-müügiassistentide juurutamine suurendab konversioone ning automatiseerib ja optimeerib teie müügiprotsesse."
+  },
+  "common": {
+    "language": "Keel",
+    "close": "Sulge",
+    "prev": "Tagasi",
+    "next": "Edasi"
+  },
+  "hero": {
+    "badge": "Oleme ICIE komitee liikmed",
+    "title": "Suurendage müügiosakonna tasuvust 2 korda <accent>AI-müügiassistendi</accent> abil",
+    "subtitle": "AI-müügiassistent vastab, kvalifitseerib ja müüb — 24/7, ilma inimfaktorita",
+    "stats": [
+      "<accent><b>+50%</b></accent> konversioonile → tänu kohestele vastustele",
+      "<accent><b>–30%</b></accent> müügiosakonna kuludest → osa funktsioone täidab AI",
+      "<accent><b>1000+</b></accent> vestlust samaaegselt"
+    ],
+    "cta": "Hankige testmüügiassistent",
+    "ctaNote": "Valmistame testiva AI-müügiassistendi <b>TASUTA</b>"
+  },
+  "features": {
+    "agentTitle": "AI-agent, kes:",
+    "agentText": "Suhtleb klientidega ja kvalifitseerib neid, broneerib kohtumisi ja teenuseid, võtab vastu makseid ja kogub tagasisidet, liigub müügivihjeid CRM-is ning töötab 24/7",
+    "integrationsTitle": "Integreerub",
+    "integrationsText": "kõigi populaarsete platvormidega",
+    "integrationsMore": "...ja paljude teistega.<br/>Täpsema info saamiseks<br/>pöörduge meie juhi poole"
+  },
+  "pain": {
+    "title": "Müügiprotsessi nõrgad kohad, mis maksavad teile iga päev raha",
+    "cards": [
+      {
+        "title": "Maksate liikluse eest,<br/>kuid kaotate päringuid",
+        "lead": "Osa kliente lahkub juba enne esimest kontakti",
+        "items": [
+          "juhid ei jõua vastata",
+          "päringuid töödeldakse viivitusega",
+          "klient läheb selle juurde, kes vastas kiiremini."
+        ]
+      },
+      {
+        "title": "Vea hind kasvab,<br/>kontroll väheneb",
+        "lead": "Iga vastamata päring muutub järjest kallimaks",
+        "items": [
+          "liikluse hind kasvab",
+          "osa pöördumistest kaob juba alguses",
+          "te ei näe, kus täpselt müügilehter «lekib»"
+        ]
+      },
+      {
+        "title": "Käsitsi kvalifitseerimine<br/>neelab eelarvet",
+        "lead": "Müügijuhid kulutavad aega millelegi muule kui müügile",
+        "items": [
+          "samad küsimused",
+          "«tühjad» müügivihjed",
+          "katsed veenda neid, kes pole valmis"
+        ]
+      },
+      {
+        "title": "Tulemus sõltub inimestest,<br/>mitte süsteemist",
+        "lead": "Müük on ebastabiilne ja ettearvamatu",
+        "items": [
+          "erinev suhtluse kiirus ja kvaliteet",
+          "väsimus, läbipõlemine, personali voolavus",
+          "tehinguid ei viida lõpuni"
+        ]
+      }
+    ]
+  },
+  "how": {
+    "title": "Kuidas <accent>AI-agent</accent> suurendab müügi efektiivsust",
+    "dialog": {
+      "title": "Kliendiga suhtlemisel AI-agent:",
+      "items": [
+        {
+          "title": "<b>Koheselt </b>vastab 100% päringutele — 24/7",
+          "note": "→ kliendid ei lähe ootamise tõttu konkurentide juurde"
+        },
+        {
+          "title": "<b>Iseseisvalt</b> esitab küsimusi ja selgitab välja vajaduse",
+          "note": "→ müügijuhid ei raiska aega «külmadele» ja mittesihipärastele klientidele"
+        },
+        {
+          "title": "<b>Käsitleb </b>tüüpilisi vastuväiteid ja viib järgmise sammuni",
+          "note": "→ rohkem kliente jõuab kohtumise või broneeringuni"
+        },
+        {
+          "title": "<b>Mõistab</b> konteksti, häält ja pilte",
+          "note": "→ vestlus tundub «elavana», mitte nagu bot"
+        }
+      ],
+      "outcome": "Tulemuseks saate ettevalmistatud kliendi, mitte lihtsalt vestluse."
+    },
+    "crm": {
+      "title": "CRM-is ja protsessides AI-agent:",
+      "items": [
+        {
+          "title": "<b>Automaatselt</b> salvestab kõik kliendi andmed CRM-i",
+          "note": "→ ükski päring ei lähe kaduma ega «unune»"
+        },
+        {
+          "title": "Kogu vestluste ajalugu ja müügilehtri etapid on —<b> teie kontrolli all</b>",
+          "note": "→ näete, kus ja miks tehingud kaotsi lähevad"
+        },
+        {
+          "title": "<b>Liigutab tehinguid</b> müügilehtri etappide vahel vastavalt teie reeglitele",
+          "note": "→ müügiprotsess muutub süsteemseks, mitte kaootiliseks"
+        },
+        {
+          "title": "<b>Määrab </b>järgmise sammu automaatselt",
+          "note": "→ broneering / kohtumine / üleandmine müügijuhile õigel hetkel"
+        }
+      ],
+      "outcome": "Müügiosakond ei sõltu enam inimeste distsipliinist."
+    }
+  },
+  "cta": {
+    "consultation": "Saada konsultatsioon juurutamise kohta",
+    "demo": "Broneeri demo",
+    "bookConsultation": "Broneeri konsultatsioon",
+    "estimate": "Arvuta projekti maksumus"
+  },
+  "results": {
+    "title": "Kohe pärast juurutamist saate:",
+    "cards": [
+      {
+        "value": ["+", "40", "%"],
+        "caption": "konversioon",
+        "title": "Kuni +30–50% päringute konversioonile",
+        "text": "tänu kohesele reageerimisele ja kliendi järgmise sammuni (broneering/kohtumine) viimisele."
+      },
+      {
+        "value": ["kokkuhoid"],
+        "caption": "müügiosakonna tööjõukuludelt",
+        "title": "Põhikoormus liigub",
+        "text": "müügijuhtidelt AI-le."
+      },
+      {
+        "value": ["5 korda"],
+        "caption": "madalam hind",
+        "title": "Kulude vähendamine",
+        "text": "kvalifitseeritud kliendi kohta 3–6 korda."
+      },
+      {
+        "value": ["24", "/", "7"],
+        "caption": "töötab",
+        "title": "Tuhanded vestlused samaaegselt",
+        "text": "24/7 ja mis tahes maailma keeles — ilma järjekorrata."
+      }
+    ],
+    "guarantees": [
+      "Meie tehniline <m>tugi ja lepinguline garantii</m>",
+      "Te saate <m>igal hetkel</m> <m>vestluse üle võtta</m> ja <m>müügilehtri loogikat juhtida</m>"
+    ]
+  },
+  "cases": {
+    "title": "Edukad AI-assistentide juurutamised",
+    "tasksLabel": "AI-konsultandi ülesanded:",
+    "items": [
+      {
+        "title": "Kinnisvaraarendaja ja kinnisvarabüroo AÜE-s",
+        "metric": "— Kvalifitseeritud müügivihje konversioon kasvas <b>20%-lt 60%-ni</b><br/>— Kohtumise konversioon on <b>21%</b><br/>— Tehingu kestus vähenes <b>1,5 kuuni</b>",
+        "tasks": [
+          "Päringute töötlemine CRM-süsteemis Bitrix24",
+          "Kliendi kvalifitseerimine ja sobivate objektide variantide saatmine",
+          "Agendiga kohtumise määramine ja aja broneerimine Google Calendaris",
+          "Kliendikaardi täitmine CRM-süsteemis ja liigutamine tehingu etappide vahel"
+        ]
+      },
+      {
+        "title": "Püsimeigi stuudio Hispaanias",
+        "metric": "Proovikülastuse tasulise broneeringu konversioon <b>26%</b>",
+        "tasks": [
+          "Sissetulevate päringute töötlemine CRM-süsteemis Kommo",
+          "Teenusele broneerimine Altegio broneerimissüsteemis",
+          "Makseslingi saatmine",
+          "Kliendikaardi täitmine CRM-süsteemis ja liigutamine tehingu etappide vahel"
+        ]
+      },
+      {
+        "title": "Korterite, majade, suvilate ja ärikinnisvara vastuvõtt ning ekspertiis kogu Venemaal",
+        "metric": "Teenusele broneerimise konversioon kõigist päringutest <b>51,5%</b>",
+        "tasks": [
+          "Klientide nõustamine amoCRM-is teenuste hindade kohta",
+          "Vabade aegade broneerimine Yclientsi süsteemis",
+          "Kliendikaardi täitmine CRM-süsteemis ja liigutamine tehingu etappide vahel",
+          "Klientidele visiidi meeldetuletuste saatmine"
+        ]
+      },
+      {
+        "title": "Kosmeetikakliinik Iisraelis",
+        "metric": "Uute klientide broneeringute konversioon <b>40,2%</b>, korduvbroneeringud <b>23,6%</b>",
+        "tasks": [
+          "Sissetulevate taotluste töötlemine amoCRM-is",
+          "Vabade aegade leidmine ja teenustele broneerimine Google Calendaris",
+          "Meeldetuletuste saatmine",
+          "Kliendikaardi täitmine CRM-süsteemis ja liigutamine tehingu etappide vahel",
+          "Töötamine uute ja püsiklientide andmebaasiga"
+        ]
+      },
+      {
+        "title": "Reisifirma AÜE-s",
+        "metric": "Konversioon esimese kohtumiseni <b>35–55%</b>",
+        "tasks": [
+          "100% päringute töötlemine WhatsAppis ja Telegramis 24/7",
+          "Müügivihje kvalifitseerimine: kuupäevade, eelarve, pere koosseisu ja kliendi soovide täpsustamine.",
+          "Asjakohaste reisivariantide valimine ja saatmine nagu kogenud reisikonsultant.",
+          "Kohtumise broneerimine Google Calendaris",
+          "Kliendi andmete sisestamine Bitrix24-sse ja tema juhtimine läbi müügilehtri"
+        ]
+      },
+      {
+        "title": "RBmotorsi ATV-de tootmine ja müük",
+        "metric": "AI-müügijuht töötleb <b>100%</b> sissetulevatest päringutest",
+        "tasks": [
+          "Nõustamine ATV mudelite ja lisavarustuse kohta",
+          "Testisõidu kohtumise korraldamine",
+          "Kliendikaardi täitmine amoCRM-is ja müügivihjete liigutamine tehingu etappide vahel",
+          "Müügijuhtidele teavituste saatmine uuest päringust koos kokkulepitud kohtumisajaga"
+        ]
+      },
+      {
+        "title": "<b>Venemaa riiklike ülikoolide grupp RACUS</b>",
+        "metric": "AI-müügijuht töötleb <b>100%</b> sissetulevatest päringutest",
+        "tasks": [
+          "Abi ülikoolide ja õppeprogrammide valimisel",
+          "Avalduste esitamise protsessi lihtsustamine ja üliõpilaste andmete haldamine CRM-süsteemis",
+          "Potentsiaal töödelda hooaja jooksul 400 000 päringut",
+          "Mitmekeelne tugi (araabia, inglise, prantsuse, hispaania, portugali ja hiina keel)"
+        ]
+      },
+      {
+        "title": "Suusariiete bränd REAKTIV",
+        "metric": "Müügikonversioon <b>26,5%</b>",
+        "tasks": [
+          "Klientide nõustamine<br/>toodete, kampaaniate, suuruste ja rõivaste omaduste kohta",
+          "Toodete reklaamimine Wildberriesis ja Ozonis",
+          "Keerukate päringute suunamine müügijuhile klientide rahulolu tagamiseks"
+        ]
+      }
+    ]
+  },
+  "team": {
+    "title": "Nychvisioni meeskonnast",
+    "p1": "<b>Meie IT-spetsialistide ja prompt-inseneride meeskond töötab müügi-, </b>tugi- ja värbamismeeskondadega, juurutades AI-d süsteemi osana, mitte eraldiseisva tööriistana.",
+    "p2": "Rahvusvahelise töösturite ja ettevõtjate kongressi ICIE robootika- ja tehisintellekti komitee liikmed.",
+    "count": "200",
+    "countText": "<b>tehisintellekti lahenduste rakendamine </b>, mille tulemused on mõõdetavad rahas ja konversioonis"
+  },
+  "clients": {
+    "title": "Meid usaldavad"
+  },
+  "stages": {
+    "title": "Juurutamise etapid",
+    "items": [
+      {
+        "title": "Analüüs ja ettevalmistus",
+        "duration": "2–3 päeva",
+        "text": "Praeguste protsesside audit, eesmärgid, kanalid, CRM, «lekke» kohad ja kvalifitseerimise nõuded."
+      },
+      {
+        "title": "Lahenduse arhitektuur",
+        "duration": "1–2 päeva",
+        "text": "Kujundame klienditeekonna ja loogika: kuidas AI töötab ja millistel juhtudel annab päringu müügijuhile üle."
+      },
+      {
+        "title": "Arendus",
+        "duration": "5–7 päeva",
+        "text": "Stsenaariumid, teadmistebaas, reeglid, suhtlustoon, piirangud, KKK."
+      },
+      {
+        "title": "Integratsioonid ja äriprotsessid",
+        "duration": "1–2 päeva",
+        "text": "Ühendame CRM-i/veebisaidi/sõnumirakendused/sotsiaalvõrgustikud ja seadistame automatiseerimise."
+      },
+      {
+        "title": "Testimine ja seadistamine",
+        "duration": "5–7 päeva",
+        "text": "Kontrollime kvaliteeti, parandame vead ja viime süsteemi stabiilse tööni."
+      },
+      {
+        "title": "Lõplikud täiendused ja käivitamine",
+        "duration": "2–3 päeva",
+        "text": "Teie meeskonna koolitus, kontrollnimekiri, käivitamine ja esimeste tulemuste jälgimine."
+      }
+    ]
+  },
+  "contact": {
+    "title": "<b>Kas teil on veel küsimusi?</b><br/><b>Võtke meiega ühendust!</b>"
+  },
+  "form": {
+    "namePlaceholder": "Mis on teie nimi?",
+    "phoneLabel": "Teie telefoninumber",
+    "submit": "Saada",
+    "success": "Aitäh! Võtame teiega peagi ühendust.",
+    "phoneInvalid": "Sisestage korrektne telefoninumber"
+  },
+  "finalCta": {
+    "title": "<b>Lõpetage klientide kaotamine ja vähendage müügiosakonna koormust</b>",
+    "text": "15–20 minutiga näitame demot: kuidas AI vastab, kvalifitseerib, salvestab andmed CRM-i ja viib kliendi broneeringu/kohtumiseni. Näitame, millised stsenaariumid annavad just teie valdkonnas suurima efekti.",
+    "note": "Lepinguline garantii ja 100% raha tagasi, kui tulemus teid ei rahulda"
+  },
+  "popup": {
+    "title": "<b>Jätke päring</b>",
+    "text": "<b>Võtame teiega ühendust </b><accent><b>10 sekundi jooksul</b></accent><b> sõnumirakenduses (WhatsApp/Telegram) ja valime teile sobiva kohtumisaja.</b>"
+  },
+  "footer": {
+    "company": "NYCHVISION OÜ",
+    "registryCode": "Registrikood",
+    "address": "Aadress",
+    "email": "E-post"
+  }
+}

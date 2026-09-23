@@ -228,7 +228,24 @@
     text-align: center;
   }
 
+  .clients__wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
   .clients__logo {
-    transform: scale(0.8);
+    width: 100% !important;
+    height: 80px !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .team {
+    padding-top: 60px;
+  }
+
+  .team__number {
+    font-size: 48px;
   }
 }

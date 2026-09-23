@@ -62,6 +62,9 @@
 }
 
 .footer__details a {
+  display: inline-block;
+  padding: 6px 0;
+  margin: -6px 0;
   color: var(--color-text);
   text-decoration-color: var(--color-accent);
   text-underline-offset: 3px;

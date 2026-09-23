@@ -123,3 +123,25 @@
     border-radius: var(--radius);
   }
 }
+
+@media (max-width: 639px) {
+  .pain__card {
+    padding: 28px 20px;
+  }
+
+  /* Desktop line breaks make awkward wraps on narrow cards */
+  .pain__card h3 br {
+    display: none;
+  }
+
+  .pain__card h3 {
+    padding-right: 56px;
+  }
+
+  .pain__icon,
+  .pain__card:nth-child(2) .pain__icon {
+    top: 24px;
+    right: 20px;
+    bottom: auto;
+  }
+}
