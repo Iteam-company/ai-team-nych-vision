@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import AnimatedLine from "../components/AnimatedLine";
 import Button from "../components/Button";
 import ImagePlaceholder from "../components/ImagePlaceholder";
-import LanguageSwitcher from "../components/LanguageSwitcher";
+// import LanguageSwitcher from "../components/LanguageSwitcher";
 import RichText from "../components/RichText";
 import TechCanvas from "../effects/TechCanvas";
 import "./Hero.css";
@@ -26,7 +26,7 @@ export default function Hero() {
             height={30}
             className="hero__logo"
           />
-          <LanguageSwitcher className="hero__lang" />
+          {/* <LanguageSwitcher className="hero__lang" /> */}
         </header>
 
         <h1 className="hero__title">

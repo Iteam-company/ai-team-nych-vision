@@ -2,7 +2,7 @@ import Popup from "./components/Popup";
 import { PopupProvider } from "./components/PopupContext";
 import Cases from "./sections/Cases";
 import Features from "./sections/Features";
-import FinalCta from "./sections/FinalCta";
+// import FinalCta from "./sections/FinalCta";
 import Footer from "./sections/Footer";
 import Hero from "./sections/Hero";
 import HowItWorks from "./sections/HowItWorks";

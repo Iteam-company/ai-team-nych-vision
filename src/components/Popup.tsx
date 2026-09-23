@@ -1,11 +1,12 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import AnimatedLine from './AnimatedLine';
 import ImagePlaceholder from './ImagePlaceholder';
-import LeadForm from './LeadForm';
 import { usePopup } from './PopupContext';
 import RichText from './RichText';
 import './Popup.css';
+
+const LeadForm = lazy(() => import('./LeadForm'));
 
 /** Lead-capture modal opened by every call-to-action button. */
 export default function Popup() {
@@ -45,7 +46,9 @@ export default function Popup() {
           />
           <ImagePlaceholder label="Nychvision logo" width={103} height={30} className="popup__logo" />
         </div>
-        <LeadForm />
+        <Suspense fallback={null}>
+          <LeadForm />
+        </Suspense>
       </div>
     </div>
   );

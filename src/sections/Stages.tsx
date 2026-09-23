@@ -1,15 +1,17 @@
+import { lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import AnimatedLine from "../components/AnimatedLine";
-import LeadForm from "../components/LeadForm";
 import RichText from "../components/RichText";
 import WaveOrb from "../effects/WaveOrb";
 import { trackSpotlight } from "../effects/spotlight";
 import "./Stages.css";
 
+const LeadForm = lazy(() => import("../components/LeadForm"));
+
 type Stage = { title: string; duration: string; text: string };
 
-const STAGE_PATH =
-  "M123 1H446V107.17H1V209.08H272V295.21H428.07V321.02H1V357H156.07V438.02H255.06";
+// const STAGE_PATH =
+//   "M123 1H446V107.17H1V209.08H272V295.21H428.07V321.02H1V357H156.07V438.02H255.06";
 const CONTACT_PATH = "M1 1V92.66H279.05";
 
 export default function Stages() {
@@ -56,7 +58,9 @@ export default function Stages() {
             height={94}
           />
           <div className="contact__form">
-            <LeadForm />
+            <Suspense fallback={null}>
+              <LeadForm />
+            </Suspense>
           </div>
         </div>
       </div>
