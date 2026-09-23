@@ -1,32 +1,30 @@
-import { useTranslation } from "react-i18next";
-import { SUPPORTED_LANGUAGES } from "../i18n";
-import "./LanguageSwitcher.css";
+import { LOCALE_META, LOCALES, localePath, type Locale } from '../i18n/config';
+import './LanguageSwitcher.css';
 
-export default function LanguageSwitcher({
-  className = "",
-}: {
+type Props = {
+  locale: Locale;
+  label: string;
   className?: string;
-}) {
-  const { t, i18n } = useTranslation();
-  const current = i18n.resolvedLanguage;
+};
 
+/**
+ * Plain links between the language versions. Each language is its own page,
+ * so switching is a normal navigation that search engines can follow too.
+ */
+export default function LanguageSwitcher({ locale, label, className = '' }: Props) {
   return (
-    <div
-      className={`lang ${className}`}
-      role="group"
-      aria-label={t("common.language")}
-    >
-      {SUPPORTED_LANGUAGES.map((lng) => (
-        <button
+    <nav className={`lang ${className}`} aria-label={label}>
+      {LOCALES.map((lng) => (
+        <a
           key={lng}
-          type="button"
-          className={`lang__btn ${lng === current ? "is-active" : ""}`}
-          aria-pressed={lng === current}
-          onClick={() => i18n.changeLanguage(lng)}
+          href={localePath(lng)}
+          hrefLang={LOCALE_META[lng].htmlLang}
+          className={`lang__btn ${lng === locale ? 'is-active' : ''}`}
+          aria-current={lng === locale ? 'page' : undefined}
         >
           {lng.toUpperCase()}
-        </button>
+        </a>
       ))}
-    </div>
+    </nav>
   );
 }

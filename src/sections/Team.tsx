@@ -1,12 +1,9 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import Button from '../components/Button';
 import ImagePlaceholder from '../components/ImagePlaceholder';
-import RichText from '../components/RichText';
 import GlowScene from '../effects/GlowScene';
+import type { Translator } from '../i18n/translator';
+import TeamPhotoSlider from './TeamPhotoSlider';
 import './Team.css';
-
-const PHOTO_COUNT = 9;
 
 /** Logo sizes and positions (relative to the wall's top-left) from the source layout. */
 const LOGOS = [
@@ -32,40 +29,7 @@ const LOGOS = [
   { w: 119, h: 44, x: 1148, y: 274 },
 ];
 
-function PhotoSlider() {
-  const { t } = useTranslation();
-  const [active, setActive] = useState(0);
-  const [prev, setPrev] = useState<number | null>(null);
-
-  const go = (step: number) => {
-    setPrev(active);
-    setActive((active + step + PHOTO_COUNT) % PHOTO_COUNT);
-  };
-
-  return (
-    <div className="team__slider">
-      <div className="team__slides">
-        {Array.from({ length: PHOTO_COUNT }, (_, i) => (
-          <div
-            key={i}
-            className={`team__slide ${i === active ? 'is-active' : ''} ${i === prev ? 'is-exit' : ''}`}
-            aria-hidden={i !== active}
-          >
-            <ImagePlaceholder label={`Team photo ${i + 1}`} width={513} height={321} rounded={false} />
-          </div>
-        ))}
-      </div>
-      <div className="team__arrows">
-        <button type="button" className="team__arrow team__arrow--prev" onClick={() => go(-1)} aria-label={t('common.prev')} />
-        <button type="button" className="team__arrow" onClick={() => go(1)} aria-label={t('common.next')} />
-      </div>
-    </div>
-  );
-}
-
-export default function Team() {
-  const { t } = useTranslation();
-
+export default function Team({ tr }: { tr: Translator }) {
   return (
     <section className="team">
       <GlowScene className="team__glow" />
@@ -74,36 +38,32 @@ export default function Team() {
         <div className="team__grid">
           <div className="team__info">
             <h2 className="h-section">
-              <strong>{t('team.title')}</strong>
+              <strong>{tr.t('team.title')}</strong>
             </h2>
             <div className="team__about">
               <ImagePlaceholder label="ICIE logo" width={107} height={104} className="team__icie" />
               <div className="team__texts t-body">
-                <p className="team__p1">
-                  <RichText k="team.p1" />
-                </p>
-                <p className="team__p2">{t('team.p2')}</p>
+                <p className="team__p1">{tr.rich('team.p1')}</p>
+                <p className="team__p2">{tr.t('team.p2')}</p>
               </div>
             </div>
             <div className="team__count">
               <p className="team__number">
-                {t('team.count')}
+                {tr.t('team.count')}
                 <span>+</span>
               </p>
-              <p className="team__count-text t-body">
-                <RichText k="team.countText" />
-              </p>
+              <p className="team__count-text t-body">{tr.rich('team.countText')}</p>
             </div>
             <Button width={372} variant="light" className="team__cta">
-              {t('cta.estimate')}
+              {tr.t('cta.estimate')}
             </Button>
           </div>
 
-          <PhotoSlider />
+          <TeamPhotoSlider prevLabel={tr.t('common.prev')} nextLabel={tr.t('common.next')} />
         </div>
 
         <h2 className="clients__title h-section">
-          <strong>{t('clients.title')}</strong>
+          <strong>{tr.t('clients.title')}</strong>
         </h2>
         <div className="clients__wall">
           {LOGOS.map((logo, i) => (

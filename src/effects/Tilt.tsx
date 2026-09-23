@@ -1,3 +1,5 @@
+'use client';
+
 import type { MouseEvent, ReactNode } from 'react';
 
 const RESET = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';

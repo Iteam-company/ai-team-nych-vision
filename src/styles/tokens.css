@@ -67,7 +67,7 @@
   --footer-bg: #080808;
 
   /* Typography */
-  --font-base: "Manrope", Arial, sans-serif;
+  --font-base: var(--font-manrope), "Manrope", Arial, sans-serif;
 
   /* Layout */
   --container: 1200px;

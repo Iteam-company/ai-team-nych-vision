@@ -1,7 +1,6 @@
 import type { CSSProperties } from 'react';
-import { useTranslation } from 'react-i18next';
 import ImagePlaceholder from '../components/ImagePlaceholder';
-import RichText from '../components/RichText';
+import type { Translator } from '../i18n/translator';
 import './PainPoints.css';
 
 type Card = { title: string; lead: string; items: string[] };
@@ -14,15 +13,14 @@ const ICONS = [
   { w: 41, h: 52, x: 1026, y: 142, label: 'Person icon' },
 ];
 
-export default function PainPoints() {
-  const { t } = useTranslation();
-  const cards = t('pain.cards', { returnObjects: true }) as Card[];
+export default function PainPoints({ tr }: { tr: Translator }) {
+  const cards = tr.raw<Card[]>('pain.cards');
   const rows = [cards.slice(0, 2), cards.slice(2, 4)];
 
   return (
     <section className="pain">
       <div className="container">
-        <h2 className="pain__title h-section">{t('pain.title')}</h2>
+        <h2 className="pain__title h-section">{tr.t('pain.title')}</h2>
 
         {rows.map((row, r) => (
           <div key={r} className="pain__row">
@@ -31,9 +29,7 @@ export default function PainPoints() {
               const icon = ICONS[i];
               return (
                 <div key={i} className="pain__card">
-                  <h3 className="h-card">
-                    <RichText k={`pain.cards.${i}.title`} />
-                  </h3>
+                  <h3 className="h-card">{tr.rich(`pain.cards.${i}.title`)}</h3>
                   <p className="pain__lead t-body">{card.lead}</p>
                   <ul className="pain__list t-body">
                     {card.items.map((item) => (

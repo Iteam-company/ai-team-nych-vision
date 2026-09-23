@@ -1,18 +1,16 @@
-import { useTranslation } from "react-i18next";
-import AnimatedLine from "../components/AnimatedLine";
-import Button from "../components/Button";
-import ImagePlaceholder from "../components/ImagePlaceholder";
-// import LanguageSwitcher from "../components/LanguageSwitcher";
-import RichText from "../components/RichText";
-import TechCanvas from "../effects/TechCanvas";
-import "./Hero.css";
+import AnimatedLine from '../components/AnimatedLine';
+import Button from '../components/Button';
+import ImagePlaceholder from '../components/ImagePlaceholder';
+// import LanguageSwitcher from '../components/LanguageSwitcher';
+import TechCanvas from '../effects/TechCanvas';
+import type { Translator } from '../i18n/translator';
+import './Hero.css';
 
 const CTA_FRAME =
-  "M1 21C1 9.954 9.954 1 21 1H646C657.046 1 666 9.954 666 21V120C666 131.046 657.046 140 646 140H21C9.954 140 1 131.046 1 120Z";
+  'M1 21C1 9.954 9.954 1 21 1H646C657.046 1 666 9.954 666 21V120C666 131.046 657.046 140 646 140H21C9.954 140 1 131.046 1 120Z';
 
-export default function Hero() {
-  const { t } = useTranslation();
-  const stats = t("hero.stats", { returnObjects: true }) as string[];
+export default function Hero({ tr }: { tr: Translator }) {
+  const stats = tr.raw<string[]>('hero.stats');
 
   return (
     <section className="hero">
@@ -20,24 +18,17 @@ export default function Hero() {
         <TechCanvas className="hero__canvas" />
 
         <header className="hero__top">
-          <ImagePlaceholder
-            label="Nychvision logo"
-            width={103}
-            height={30}
-            className="hero__logo"
-          />
-          {/* <LanguageSwitcher className="hero__lang" /> */}
+          <ImagePlaceholder label="Nychvision logo" width={103} height={30} className="hero__logo" />
+          {/* <LanguageSwitcher locale={tr.locale} label={tr.t('common.language')} className="hero__lang" /> */}
         </header>
 
-        <h1 className="hero__title">
-          <RichText k="hero.title" />
-        </h1>
-        <p className="hero__subtitle">{t("hero.subtitle")}</p>
+        <h1 className="hero__title">{tr.rich('hero.title')}</h1>
+        <p className="hero__subtitle">{tr.t('hero.subtitle')}</p>
 
         <ul className="hero__stats timeline">
           {stats.map((_, i) => (
             <li key={i} className="hero__stat timeline__item t-body">
-              <RichText k={`hero.stats.${i}`} />
+              {tr.rich(`hero.stats.${i}`)}
             </li>
           ))}
         </ul>
@@ -51,11 +42,9 @@ export default function Hero() {
             height={141}
           />
           <Button width={324} className="hero__cta-btn">
-            {t("hero.cta")}
+            {tr.t('hero.cta')}
           </Button>
-          <p className="hero__cta-note t-lead">
-            <RichText k="hero.ctaNote" />
-          </p>
+          <p className="hero__cta-note t-lead">{tr.rich('hero.ctaNote')}</p>
         </div>
 
         <ImagePlaceholder

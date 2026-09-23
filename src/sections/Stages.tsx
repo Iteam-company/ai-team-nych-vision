@@ -1,22 +1,18 @@
-import { lazy, Suspense } from "react";
-import { useTranslation } from "react-i18next";
-import AnimatedLine from "../components/AnimatedLine";
-import RichText from "../components/RichText";
-import WaveOrb from "../effects/WaveOrb";
-import { trackSpotlight } from "../effects/spotlight";
-import "./Stages.css";
-
-const LeadForm = lazy(() => import("../components/LeadForm"));
+import AnimatedLine from '../components/AnimatedLine';
+import LazyLeadForm from '../components/LazyLeadForm';
+import WaveOrb from '../effects/WaveOrb';
+import type { Translator } from '../i18n/translator';
+import { getLeadFormProps } from '../lib/leadForm';
+import './Stages.css';
 
 type Stage = { title: string; duration: string; text: string };
 
 // const STAGE_PATH =
-//   "M123 1H446V107.17H1V209.08H272V295.21H428.07V321.02H1V357H156.07V438.02H255.06";
-const CONTACT_PATH = "M1 1V92.66H279.05";
+//   'M123 1H446V107.17H1V209.08H272V295.21H428.07V321.02H1V357H156.07V438.02H255.06';
+const CONTACT_PATH = 'M1 1V92.66H279.05';
 
-export default function Stages() {
-  const { t } = useTranslation();
-  const stages = t("stages.items", { returnObjects: true }) as Stage[];
+export default function Stages({ tr }: { tr: Translator }) {
+  const stages = tr.raw<Stage[]>('stages.items');
 
   return (
     <section className="stages">
@@ -24,19 +20,14 @@ export default function Stages() {
 
       <div className="container">
         <h2 className="h-section is-accent">
-          <strong>{t("stages.title")}</strong>
+          <strong>{tr.t('stages.title')}</strong>
         </h2>
 
         <div className="stages__grid">
           {stages.map((stage, i) => (
-            <article
-              key={i}
-              className="stage spotlight"
-              onMouseMove={trackSpotlight}
-            >
+            <article key={i} className="stage spotlight">
               <h3 className="stage__title h-card">
-                {stage.title}{" "}
-                <span className="stage__duration">({stage.duration})</span>
+                {stage.title} <span className="stage__duration">({stage.duration})</span>
               </h3>
               <p className="stage__text t-body">{stage.text}</p>
               <span className="stage__num" aria-hidden="true">
@@ -46,10 +37,8 @@ export default function Stages() {
           ))}
         </div>
 
-        <div className="contact">
-          <h2 className="contact__title h-section is-accent">
-            <RichText k="contact.title" />
-          </h2>
+        <div className="contact" id="contact">
+          <h2 className="contact__title h-section is-accent">{tr.rich('contact.title')}</h2>
           <AnimatedLine
             className="contact__line"
             d={CONTACT_PATH}
@@ -58,9 +47,7 @@ export default function Stages() {
             height={94}
           />
           <div className="contact__form">
-            <Suspense fallback={null}>
-              <LeadForm />
-            </Suspense>
+            <LazyLeadForm {...getLeadFormProps(tr)} id="contact-form" />
           </div>
         </div>
       </div>

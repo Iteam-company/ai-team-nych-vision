@@ -115,6 +115,15 @@
 }
 
 @media (max-width: 1199px) {
+  /* Leave room for the phone mockup on the right */
+  .hero__cta {
+    width: min(667px, calc(100% - 290px));
+  }
+
+  .hero__cta-note {
+    margin-left: 24px;
+  }
+
   .hero__phone {
     left: auto;
     right: 20px;

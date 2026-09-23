@@ -1,16 +1,22 @@
-import { lazy, Suspense, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+'use client';
+
+import { useEffect, type ReactNode } from 'react';
 import AnimatedLine from './AnimatedLine';
 import ImagePlaceholder from './ImagePlaceholder';
+import LazyLeadForm from './LazyLeadForm';
+import type { LeadFormProps } from './LeadForm';
 import { usePopup } from './PopupContext';
-import RichText from './RichText';
 import './Popup.css';
 
-const LeadForm = lazy(() => import('./LeadForm'));
+type Props = {
+  title: ReactNode;
+  text: ReactNode;
+  closeLabel: string;
+  form: Omit<LeadFormProps, 'id'>;
+};
 
 /** Lead-capture modal opened by every call-to-action button. */
-export default function Popup() {
-  const { t } = useTranslation();
+export default function Popup({ title, text, closeLabel, form }: Props) {
   const { isOpen, close } = usePopup();
 
   useEffect(() => {
@@ -28,15 +34,13 @@ export default function Popup() {
 
   return (
     <div className="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title" onClick={close}>
-      <button type="button" className="popup__close" onClick={close} aria-label={t('common.close')} />
+      <button type="button" className="popup__close" onClick={close} aria-label={closeLabel} />
       <div className="popup__box" onClick={(e) => e.stopPropagation()}>
         <div className="popup__info">
           <h2 id="popup-title" className="h-section is-accent">
-            <RichText k="popup.title" />
+            {title}
           </h2>
-          <p className="popup__text">
-            <RichText k="popup.text" />
-          </p>
+          <p className="popup__text">{text}</p>
           <AnimatedLine
             className="popup__line"
             d="M1 1V92.66H279.05"
@@ -46,9 +50,7 @@ export default function Popup() {
           />
           <ImagePlaceholder label="Nychvision logo" width={103} height={30} className="popup__logo" />
         </div>
-        <Suspense fallback={null}>
-          <LeadForm />
-        </Suspense>
+        <LazyLeadForm {...form} id="popup-form" />
       </div>
     </div>
   );

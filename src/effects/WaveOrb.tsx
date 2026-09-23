@@ -1,3 +1,5 @@
+'use client';
+
 import { useId, useRef, type MouseEvent } from 'react';
 import './effects.css';
 
