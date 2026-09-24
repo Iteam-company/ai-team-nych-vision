@@ -21,31 +21,37 @@
   grid-template-columns: 587px 513px;
 }
 
+/*
+ * Text-only layout (the photo slider is off): the statement and the stat share
+ * one column, indented past the mark, with sizes that scale down with the
+ * viewport — 36px / 26px on desktop, ~22px / 18px on phones.
+ */
 .team__about {
   display: flex;
+  align-items: center;
   gap: 36px;
-  margin-top: 29px;
+  margin-top: 36px;
 }
 
 .team__logo {
-  margin: auto 0;
+  flex-shrink: 0;
   width: 107px;
   height: 70px;
 }
 
 .team__p1 {
-  max-width: 364px;
-}
-
-.team__p2 {
-  max-width: 345px;
-  margin-top: 18px;
+  /* A comfortable line length for large text now that it spans the page */
+  max-width: 820px;
+  font-size: clamp(22px, 14px + 2.2vw, 36px);
+  line-height: 1.3;
+  text-wrap: pretty;
 }
 
 .team__count {
   display: flex;
+  align-items: center;
   gap: 36px;
-  margin-top: 28px;
+  margin-top: 40px;
 }
 
 .team__number {
@@ -54,15 +60,19 @@
   font-size: 55px;
   line-height: 58px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .team__count-text {
-  max-width: 292px;
-  margin-top: 6px;
+  max-width: 560px;
+  font-size: clamp(18px, 13px + 1.2vw, 26px);
+  /* Overrides .t-body's 23px, which is shorter than the text itself */
+  line-height: 1.3;
+  text-wrap: pretty;
 }
 
 .team__cta {
-  margin-top: 53px;
+  margin-top: 48px;
 }
 
 /* Photo slider with a 3D "dissolve" transition */
@@ -205,11 +215,34 @@
   .team__count {
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
+  }
+
+  .team__about {
+    margin-top: 28px;
+  }
+
+  .team__logo {
+    width: 84px;
+    height: 55px;
+  }
+
+  .team__p1,
+  .team__count-text {
+    max-width: 600px;
+  }
+
+  .team__count {
+    gap: 8px;
+    margin-top: 32px;
   }
 
   .team__number {
     width: auto;
+  }
+
+  .team__cta {
+    margin-top: 36px;
   }
 
   .team__slider {
@@ -246,10 +279,16 @@
 
 @media (max-width: 639px) {
   .team {
-    padding-top: 60px;
+    padding: 60px 0 48px;
+  }
+
+  .team__logo {
+    width: 72px;
+    height: 47px;
   }
 
   .team__number {
     font-size: 48px;
+    line-height: 52px;
   }
 }

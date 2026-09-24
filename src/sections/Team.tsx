@@ -1,7 +1,6 @@
 import Button from "../components/Button";
 import GlowScene from "../effects/GlowScene";
 import type { Translator } from "../i18n/translator";
-import TeamPhotoSlider from "./TeamPhotoSlider";
 import "./Team.css";
 import { BrandMark } from "../components/BrandLogo";
 
@@ -40,46 +39,29 @@ export default function Team({ tr }: { tr: Translator }) {
       <GlowScene className="team__glow" />
 
       <div className="container">
-        <div className="team__grid">
-          <div className="team__info">
-            <h2 className="h-section">
-              <strong>{tr.t("team.title")}</strong>
-            </h2>
-            <div className="team__about">
-              {/* <ImagePlaceholder
-                label="ICIE logo"
-                width={107}
-                height={104}
-                className="team__icie"
-              /> */}
-              <BrandMark className="team__logo" />
-              <div className="team__texts t-body">
-                <p className="team__p1">{tr.rich("team.p1")}</p>
-                {/* <p className="team__p2">{tr.t('team.p2')}</p> */}
-              </div>
+        <div className="team__info">
+          <h2 className="h-section">
+            <strong>{tr.t("team.title")}</strong>
+          </h2>
+          <div className="team__about">
+            <BrandMark className="team__logo" />
+            <div className="team__texts">
+              <p className="team__p1">{tr.rich("team.p1")}</p>
             </div>
-            <div className="team__count">
-              <p className="team__number">
-                {tr.t("team.count")}
-                <span>+</span>
-              </p>
-              <p className="team__count-text t-body">
-                {tr.rich("team.countText")}
-              </p>
-            </div>
-            <Button width={372} variant="light" className="team__cta">
-              {tr.t("cta.estimate")}
-            </Button>
           </div>
-
-          <TeamPhotoSlider
-            prevLabel={tr.t("common.prev")}
-            nextLabel={tr.t("common.next")}
-          />
+          <div className="team__count">
+            <p className="team__number">
+              {tr.t("team.count")}
+              <span>+</span>
+            </p>
+            <p className="team__count-text t-body">
+              {tr.rich("team.countText")}
+            </p>
+          </div>
+          <Button width={372} variant="light" className="team__cta">
+            {tr.t("cta.estimate")}
+          </Button>
         </div>
-
-        {/* "Trusted by" is hidden until we have the clients' logos cleared for
-            use. LOGOS keeps the source layout so it can be switched back on. */}
       </div>
     </section>
   );

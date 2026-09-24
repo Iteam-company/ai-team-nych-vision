@@ -93,20 +93,30 @@
 }
 
 .case__title {
-  max-width: 520px;
   font-size: 39px;
   line-height: 41px;
   font-weight: 600;
   color: var(--color-accent);
 }
 
-.case:nth-child(7) .case__title {
-  max-width: 669px;
+/* Smaller titles for cases whose mockups start close to the text (see CaseSlider) */
+.case--title-md .case__title {
+  font-size: 32px;
+  line-height: 35px;
 }
 
-.case--long-title .case__title {
+.case--title-sm .case__title {
   font-size: 26px;
   line-height: 27px;
+}
+
+/*
+ * Keep text clear of the mockups: --media-left is the nearest mockup's left
+ * edge, set per card. 100px is the content's left padding, 12px the gap.
+ */
+.case__title,
+.case__task {
+  max-width: min(520px, calc(var(--media-left, 632px) - 112px));
 }
 
 .case__metric {
@@ -137,7 +147,6 @@
   display: flex;
   align-items: flex-start;
   gap: 21px;
-  max-width: 470px;
 }
 
 .case__task > span:last-child {
@@ -231,6 +240,38 @@
     padding-left: 40px;
     max-width: 55%;
   }
+
+  .case__title,
+  .case__task {
+    max-width: none;
+  }
+
+  /*
+   * Chat-only cases: stretching one short exchange to fill the box leaves it
+   * floating in an empty card, so show all of them as a stacked conversation.
+   */
+  .case .case__media--chats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .case__media--chats .case__shot {
+    position: static;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .case__media--chats .case__shot ~ .case__shot {
+    display: flex;
+  }
+
+  .case__media--chats .mk-bubble {
+    font-size: 13px;
+    line-height: 18px;
+  }
 }
 
 @media (max-width: 959px) {
@@ -264,7 +305,7 @@
     padding: 30px 24px;
   }
 
-  .case__title {
+  .case .case__title {
     font-size: 28px;
     line-height: 31px;
   }
@@ -293,6 +334,11 @@
     width: auto !important;
   }
 
+  .case .case__media--chats {
+    height: auto;
+    padding: 0;
+  }
+
   .cases__actions {
     justify-content: center;
   }
@@ -314,7 +360,7 @@
     padding: 28px 20px;
   }
 
-  .case__title {
+  .case .case__title {
     font-size: 26px;
     line-height: 29px;
   }
@@ -326,6 +372,10 @@
   .case__media {
     height: 380px;
     margin: 0 20px 20px;
+  }
+
+  .case .case__media--chats {
+    height: auto;
   }
 
   .cases__actions {
