@@ -1,5 +1,5 @@
 import Button from '../components/Button';
-import ImagePlaceholder from '../components/ImagePlaceholder';
+import { ChatIcon, ContractIcon } from '../components/LineIcons';
 import Tilt from '../effects/Tilt';
 import type { Translator } from '../i18n/translator';
 import './Results.css';
@@ -35,11 +35,11 @@ export default function Results({ tr }: { tr: Translator }) {
 
         <div className="results__guarantees is-dark">
           <Tilt className="results__icon">
-            <ImagePlaceholder label="Contract icon" width={54} height={63} light />
+            <ContractIcon width={54} height={63} />
           </Tilt>
           <p className="results__guarantee t-body">{tr.rich('results.guarantees.0')}</p>
           <Tilt className="results__icon">
-            <ImagePlaceholder label="Chat icon" width={69} height={47} light />
+            <ChatIcon width={69} height={47} />
           </Tilt>
           <p className="results__guarantee t-body">{tr.rich('results.guarantees.1')}</p>
         </div>

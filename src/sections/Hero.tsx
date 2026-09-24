@@ -1,7 +1,8 @@
 import AnimatedLine from '../components/AnimatedLine';
+import BrandLogo from '../components/BrandLogo';
 import Button from '../components/Button';
-import ImagePlaceholder from '../components/ImagePlaceholder';
 // import LanguageSwitcher from '../components/LanguageSwitcher';
+import PhoneChat from '../components/PhoneChat';
 import TechCanvas from '../effects/TechCanvas';
 import type { Translator } from '../i18n/translator';
 import './Hero.css';
@@ -18,7 +19,7 @@ export default function Hero({ tr }: { tr: Translator }) {
         <TechCanvas className="hero__canvas" />
 
         <header className="hero__top">
-          <ImagePlaceholder label="Nychvision logo" width={103} height={30} className="hero__logo" />
+          <BrandLogo className="hero__logo" />
           {/* <LanguageSwitcher locale={tr.locale} label={tr.t('common.language')} className="hero__lang" /> */}
         </header>
 
@@ -47,12 +48,7 @@ export default function Hero({ tr }: { tr: Translator }) {
           <p className="hero__cta-note t-lead">{tr.rich('hero.ctaNote')}</p>
         </div>
 
-        <ImagePlaceholder
-          label="Phone mockup · AI chat"
-          width={314}
-          height={649}
-          className="hero__phone"
-        />
+        <PhoneChat className="hero__phone" />
       </div>
     </section>
   );

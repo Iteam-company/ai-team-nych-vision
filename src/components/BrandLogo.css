@@ -1,0 +1,86 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text);
+}
+
+.brand__mark {
+  flex-shrink: 0;
+  width: auto;
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand__legal {
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand__name {
+  display: flex;
+  gap: 0.28em;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.brand__name b {
+  font-weight: 700;
+}
+
+.brand__name > span {
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* Header: sits in a 103x30 slot, so the mark drives the height */
+.brand--header {
+  gap: 9px;
+}
+
+.brand--header .brand__mark {
+  height: 30px;
+}
+
+.brand--header .brand__legal {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+}
+
+.brand--header .brand__name {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Footer: stacked, mark on top */
+.brand--footer {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.brand--footer .brand__mark {
+  height: 58px;
+}
+
+.brand--footer .brand__legal {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+}
+
+.brand--footer .brand__name {
+  margin-top: 7px;
+  font-size: 19px;
+}
+
+@media (max-width: 959px) {
+  .brand--footer {
+    align-items: center;
+  }
+}

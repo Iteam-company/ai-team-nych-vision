@@ -1,0 +1,464 @@
+/*
+ * iPhone device frame + two messenger themes.
+ *
+ * Everything inside the screen is sized in cqw against the screen itself, so
+ * the same markup works at the 314px hero size and at the 230px mobile size
+ * without a second set of breakpoints.
+ */
+
+.pc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ---------- device ---------- */
+
+.pc__device {
+  position: relative;
+  width: 100%;
+  padding: 3px;
+  border-radius: 13.5%/6.5%;
+  background: linear-gradient(
+    150deg,
+    #8d9199 0%,
+    #3f434a 18%,
+    #6e727a 38%,
+    #2d3036 62%,
+    #7d818a 82%,
+    #40444b 100%
+  );
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.pc__bezel {
+  padding: 9px;
+  border-radius: 12.4%/6%;
+  background: #000;
+}
+
+/* Side buttons */
+.pc__btn {
+  position: absolute;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #6f737b, #3b3e44);
+}
+
+.pc__btn--silent {
+  left: -2px;
+  top: 16%;
+  width: 3px;
+  height: 4.5%;
+}
+
+.pc__btn--up {
+  left: -2.5px;
+  top: 23%;
+  width: 3px;
+  height: 8%;
+}
+
+.pc__btn--down {
+  left: -2.5px;
+  top: 33%;
+  width: 3px;
+  height: 8%;
+}
+
+.pc__btn--power {
+  right: -2.5px;
+  top: 26%;
+  width: 3px;
+  height: 12%;
+}
+
+/* ---------- screen ---------- */
+
+.pc__screen {
+  container-type: inline-size;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 9 / 19.5;
+  overflow: hidden;
+  border-radius: 12%/5.6%;
+  background: var(--pc-canvas);
+  color: #fff;
+  line-height: 1.34;
+  font-weight: 400;
+  text-align: left;
+}
+
+.pc__screen--telegram {
+  --pc-header: #212d3b;
+  --pc-canvas: #0e1621;
+  --pc-in: #182533;
+  --pc-out: #2b5278;
+  --pc-out-text: #ffffff;
+  --pc-accent: #62a6e8;
+  --pc-divider: rgba(255, 255, 255, 0.07);
+  --pc-tick: #62a6e8;
+}
+
+.pc__screen--whatsapp {
+  --pc-header: #1f2c34;
+  --pc-canvas: #0b141a;
+  --pc-in: #1f2c34;
+  --pc-out: #005c4b;
+  --pc-out-text: #e9edef;
+  --pc-accent: #25d366;
+  --pc-divider: rgba(255, 255, 255, 0.06);
+  --pc-tick: #53bdeb;
+}
+
+/* Dynamic Island */
+.pc__island {
+  position: absolute;
+  top: 2cqw;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 29%;
+  height: 8.6cqw;
+  padding-right: 3.8cqw;
+  background: #000;
+  border-radius: 999px;
+  transform: translateX(-50%);
+}
+
+.pc__lens {
+  width: 2.3cqw;
+  height: 2.3cqw;
+  border-radius: 50%;
+  background: #12222c;
+  box-shadow: inset 0 0 0 0.4cqw #05090c;
+}
+
+/* Status bar */
+.pc__status {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  height: 12.4cqw;
+  padding: 0 7%;
+  background: var(--pc-header);
+  font-size: 4cqw;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.pc__status-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.6cqw;
+}
+
+.pc__status-icons svg {
+  fill: #fff;
+}
+
+.pc__signal {
+  width: 5.2cqw;
+  height: 3.5cqw;
+}
+
+.pc__wifi {
+  width: 4.8cqw;
+  height: 3.6cqw;
+}
+
+.pc__battery {
+  width: 7.6cqw;
+  height: 3.7cqw;
+}
+
+.pc__battery-shell {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.45);
+  stroke-width: 1;
+}
+
+.pc__battery-fill,
+.pc__battery-cap {
+  fill: #fff;
+}
+
+.pc__battery-cap {
+  opacity: 0.45;
+}
+
+/* Conversation header */
+.pc__header {
+  display: flex;
+  align-items: center;
+  gap: 2.4cqw;
+  flex-shrink: 0;
+  padding: 2.2cqw 3.4cqw 2.6cqw;
+  background: var(--pc-header);
+  border-bottom: 1px solid var(--pc-divider);
+}
+
+.pc__back {
+  width: 5.4cqw;
+  height: 5.4cqw;
+  flex-shrink: 0;
+  color: var(--pc-accent);
+}
+
+.pc__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 9.6cqw;
+  height: 9.6cqw;
+  border-radius: 50%;
+  background: var(--pc-accent);
+  color: #fff;
+}
+
+.pc__avatar svg {
+  width: 60%;
+  height: 60%;
+}
+
+.pc__who {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pc__contact {
+  font-size: 4cqw;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pc__subtitle {
+  font-size: 3.3cqw;
+  line-height: 1.3;
+  color: var(--pc-accent);
+}
+
+/* Thread: newest at the bottom, oldest scrolls off the top */
+.pc__thread {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1.7cqw;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 3cqw 3.4cqw 2.4cqw;
+}
+
+.pc__row {
+  display: flex;
+}
+
+.pc__row--in {
+  justify-content: flex-start;
+}
+
+.pc__row--out {
+  justify-content: flex-end;
+}
+
+.pc__bubble {
+  position: relative;
+  max-width: 80%;
+  padding: 2.1cqw 2.9cqw;
+  border-radius: 4.4cqw;
+  background: var(--pc-in);
+  font-size: 4cqw;
+  animation: pc-pop 0.26s ease-out;
+}
+
+.pc__row--out .pc__bubble {
+  padding-right: 8.4cqw;
+  background: var(--pc-out);
+  color: var(--pc-out-text);
+}
+
+.pc__ticks {
+  position: absolute;
+  right: 2.4cqw;
+  bottom: 2.1cqw;
+  width: 4.4cqw;
+  height: 3cqw;
+  color: var(--pc-tick);
+}
+
+.pc__bubble--typing {
+  display: flex;
+  align-items: center;
+  gap: 1.3cqw;
+  padding: 3.2cqw 3.4cqw;
+}
+
+.pc__bubble--typing i {
+  width: 1.9cqw;
+  height: 1.9cqw;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  animation: pc-blink 1.1s infinite ease-in-out;
+}
+
+.pc__bubble--typing i:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.pc__bubble--typing i:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+/* Composer */
+.pc__composer {
+  display: flex;
+  align-items: center;
+  gap: 2.4cqw;
+  flex-shrink: 0;
+  padding: 2.2cqw 3.4cqw 1.4cqw;
+  background: var(--pc-header);
+}
+
+.pc__input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  height: 9.2cqw;
+  padding: 0 3.4cqw;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 3.7cqw;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.pc__placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.pc__caret {
+  display: inline-block;
+  width: 0.5cqw;
+  height: 4.4cqw;
+  margin-left: 0.4cqw;
+  background: var(--pc-accent);
+  animation: pc-caret 1s steps(1) infinite;
+}
+
+.pc__send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 9.2cqw;
+  height: 9.2cqw;
+  border-radius: 50%;
+  background: var(--pc-accent);
+  color: #fff;
+}
+
+.pc__send svg {
+  width: 52%;
+  height: 52%;
+  margin-left: 4%;
+}
+
+.pc__home {
+  flex-shrink: 0;
+  width: 36%;
+  height: 1.1cqw;
+  margin: 1.5cqw auto 2cqw;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* ---------- tabs ---------- */
+
+.pc__tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.pc__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.pc__tab svg {
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.pc__tab:hover {
+  border-color: var(--color-accent);
+}
+
+.pc__tab.is-active {
+  color: #fff;
+  border-color: transparent;
+}
+
+.pc__tab.is-active svg {
+  opacity: 1;
+}
+
+.pc__tab--telegram.is-active {
+  background: #229ed9;
+}
+
+.pc__tab--whatsapp.is-active {
+  background: #128c7e;
+}
+
+@keyframes pc-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+}
+
+@keyframes pc-blink {
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+@keyframes pc-caret {
+  50% {
+    opacity: 0;
+  }
+}

@@ -69,6 +69,9 @@
 
 .results__icon {
   flex-shrink: 0;
+  /* Lets the front chat bubble occlude the one behind it */
+  --icon-fill: var(--color-light-bg);
+  color: var(--color-accent);
 }
 
 .results__guarantee {

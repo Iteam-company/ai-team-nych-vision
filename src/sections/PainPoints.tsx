@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import ImagePlaceholder from '../components/ImagePlaceholder';
+import { HourglassIcon, MoneyIcon, PersonIcon, PriceTagIcon } from '../components/LineIcons';
 import type { Translator } from '../i18n/translator';
 import './PainPoints.css';
 
@@ -7,10 +7,10 @@ type Card = { title: string; lead: string; items: string[] };
 
 /** Icon size and offset (from the row's top-left) for each card, as in the source layout. */
 const ICONS = [
-  { w: 33, h: 38, x: 432, y: 119, label: 'Hourglass icon' },
-  { w: 49, h: 38, x: 1021, y: 116, label: 'Money icon' },
-  { w: 42, h: 45, x: 428, y: 149, label: 'Price tag icon' },
-  { w: 41, h: 52, x: 1026, y: 142, label: 'Person icon' },
+  { w: 33, h: 38, x: 432, y: 119, Glyph: HourglassIcon },
+  { w: 49, h: 38, x: 1021, y: 116, Glyph: MoneyIcon },
+  { w: 42, h: 45, x: 428, y: 149, Glyph: PriceTagIcon },
+  { w: 41, h: 52, x: 1026, y: 142, Glyph: PersonIcon },
 ];
 
 export default function PainPoints({ tr }: { tr: Translator }) {
@@ -36,8 +36,7 @@ export default function PainPoints({ tr }: { tr: Translator }) {
                       <li key={item}>— {item}</li>
                     ))}
                   </ul>
-                  <ImagePlaceholder
-                    label={icon.label}
+                  <icon.Glyph
                     width={icon.w}
                     height={icon.h}
                     className="pain__icon"

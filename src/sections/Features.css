@@ -35,7 +35,7 @@
   padding: 69px 0 0 55px;
 }
 
-.features__card--integrations > .ph:first-child {
+.features__card--integrations > .mk:first-child {
   margin-top: 1px;
 }
 
@@ -62,7 +62,7 @@
     padding: 30px 24px;
   }
 
-  .features__card--chats .ph {
+  .features__card--chats .mk {
     width: 100% !important;
   }
 

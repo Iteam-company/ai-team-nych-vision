@@ -1,4 +1,4 @@
-import ImagePlaceholder from '../components/ImagePlaceholder';
+import BrandLogo from '../components/BrandLogo';
 import type { Translator } from '../i18n/translator';
 import { COMPANY } from '../lib/company';
 import './Footer.css';
@@ -7,7 +7,7 @@ export default function Footer({ tr }: { tr: Translator }) {
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <ImagePlaceholder label="Nychvision logo" width={120} height={111} className="footer__logo" />
+        <BrandLogo size="footer" className="footer__logo" />
 
         <address className="footer__company t-body">
           <p className="footer__name">{tr.t('footer.company')}</p>
