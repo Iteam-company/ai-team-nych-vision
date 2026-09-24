@@ -1,14 +1,17 @@
-import AnimatedLine from '../components/AnimatedLine';
-import Button from '../components/Button';
-import { CrmCalendar, CrmEvent, DialogCard } from '../components/Mockups';
-import type { Translator } from '../i18n/translator';
-import './HowItWorks.css';
+import AnimatedLine from "../components/AnimatedLine";
+import Button from "../components/Button";
+import { CrmCalendar, CrmEvent, DialogCard } from "../components/Mockups";
+import type { Translator } from "../i18n/translator";
+import "./HowItWorks.css";
 
 type Item = { title: string; note: string };
 
-const CONNECTORS = 'M35.5 1H74.615L124.6 50.985M1 83.5H70.029L131.5 117.5M82 165.5H131.5';
+const CONNECTORS =
+  "M35.5 1H74.615L124.6 50.985" +
+  "M1 83.5H70.029L131.5 117.5" +
+  "M40 165H70.029L131.5 130";
 
-function Column({ tr, group }: { tr: Translator; group: 'dialog' | 'crm' }) {
+function Column({ tr, group }: { tr: Translator; group: "dialog" | "crm" }) {
   const items = tr.raw<Item[]>(`how.${group}.items`);
 
   return (
@@ -17,7 +20,9 @@ function Column({ tr, group }: { tr: Translator; group: 'dialog' | 'crm' }) {
       <ul className="how__list timeline">
         {items.map((item, i) => (
           <li key={i} className="timeline__item">
-            <p className="how__item-title t-lead">{tr.rich(`how.${group}.items.${i}.title`)}</p>
+            <p className="how__item-title t-lead">
+              {tr.rich(`how.${group}.items.${i}.title`)}
+            </p>
             <p className="how__item-note t-body">{item.note}</p>
           </li>
         ))}
@@ -26,7 +31,7 @@ function Column({ tr, group }: { tr: Translator; group: 'dialog' | 'crm' }) {
         <strong>{tr.t(`how.${group}.outcome`)}</strong>
       </p>
 
-      {group === 'dialog' ? (
+      {group === "dialog" ? (
         <div className="how__media how__media--dialog">
           <DialogCard
             width={359}
@@ -87,7 +92,7 @@ export default function HowItWorks({ tr }: { tr: Translator }) {
   return (
     <section className="how">
       <div className="container">
-        <h2 className="how__title h-section">{tr.rich('how.title')}</h2>
+        <h2 className="how__title h-section">{tr.rich("how.title")}</h2>
 
         <div className="how__panel spotlight">
           <Column tr={tr} group="dialog" />
@@ -95,9 +100,9 @@ export default function HowItWorks({ tr }: { tr: Translator }) {
         </div>
 
         <div className="how__actions">
-          <Button width={372}>{tr.t('cta.consultation')}</Button>
+          <Button width={372}>{tr.t("cta.consultation")}</Button>
           <Button width={265} variant="outline">
-            {tr.t('cta.demo')}
+            {tr.t("cta.demo")}
           </Button>
         </div>
       </div>

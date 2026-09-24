@@ -19,7 +19,7 @@
 
 /* Outer panel: bleeds to the left edge, ends on the right */
 .how__panel::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0 57px 0 calc(50% - 50vw);
   z-index: -1;
@@ -43,7 +43,7 @@
 
 /* Inner panel behind the left column */
 .how__col--dialog::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -148,7 +148,7 @@
 
 .how__m3 {
   top: 170px;
-  left: 58px;
+  left: 30px;
 }
 
 .how__connectors {

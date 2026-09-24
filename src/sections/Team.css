@@ -27,8 +27,10 @@
   margin-top: 29px;
 }
 
-.team__icie {
-  border-radius: 50%;
+.team__logo {
+  margin: auto 0;
+  width: 107px;
+  height: 70px;
 }
 
 .team__p1 {
@@ -83,7 +85,8 @@
   opacity: 0;
   visibility: hidden;
   filter: blur(40px) brightness(1.5);
-  transform: translate3d(300px, 100px, -1000px) rotateX(20deg) rotateY(-30deg) scale(1.5);
+  transform: translate3d(300px, 100px, -1000px) rotateX(20deg) rotateY(-30deg)
+    scale(1.5);
   transition:
     transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1),
     opacity 0.8s ease,
@@ -111,7 +114,8 @@
 .team__slide.is-exit {
   opacity: 0;
   filter: blur(20px);
-  transform: translate3d(-300px, -100px, -500px) rotateX(-10deg) rotateY(30deg) scale(0.5);
+  transform: translate3d(-300px, -100px, -500px) rotateX(-10deg) rotateY(30deg)
+    scale(0.5);
 }
 
 .team__arrows {
@@ -131,7 +135,7 @@
 }
 
 .team__arrow::before {
-  content: '';
+  content: "";
   display: block;
   width: 8px;
   height: 8px;
