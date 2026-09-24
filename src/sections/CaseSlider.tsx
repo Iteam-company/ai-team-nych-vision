@@ -11,6 +11,8 @@ import {
 import WaveOrb from "../effects/WaveOrb";
 
 export type CaseItem = {
+  /** Matches a key in LAYOUTS below; set per case in the locale files. */
+  id: string;
   /** Plain-text title for the tab's accessible name. */
   label: string;
   title: ReactNode;
@@ -64,13 +66,57 @@ type CaseLayout = {
   height: number;
   media: Media[];
   orb?: boolean;
-  titleSize?: 'md' | 'sm';
+  titleSize?: "md" | "sm";
+  /** "list": the metric is several "— …" lines, set in the smaller body size. */
+  metricStyle?: "list";
 };
 
-const LAYOUT: CaseLayout[] = [
-  // 1 — Developer and real estate agency in the UAE
-  {
+/**
+ * Mockups per case, keyed by the case `id` in the locale files. A case shows
+ * up on the page when its text is in `cases.items`; the layouts of cases that
+ * are currently off stay here so they can be switched back on.
+ */
+const LAYOUTS: Record<string, CaseLayout> = {
+  // AI content production studio
+  "ai-content-studio": {
+    height: 403,
+    metricStyle: "list",
+    media: [
+      {
+        kind: "phone",
+        app: "telegram",
+        contact: "AI Content Studio",
+        w: 276,
+        h: 538,
+        x: 690,
+        y: -15,
+        lines: [
+          c("Hi! Do you make AI video ads?"),
+          a(
+            "Hi! Yes — ads, product visuals and UGC-style clips. What are you promoting?",
+          ),
+          c("A skincare brand, launching in March"),
+          c("Need content for TikTok and Reels"),
+          a(
+            "Nice. Roughly how many videos a month, and what budget do you have in mind?",
+          ),
+          c("About 20 videos, around €3k"),
+          a(
+            "That fits our Growth plan: 20 videos, 5-day delivery. Sending 3 skincare examples.",
+          ),
+          c("Love them. Can we talk this week?"),
+          a(
+            "Thursday 14:00 with Anna, our producer? Your brief is already in HubSpot.",
+          ),
+        ],
+      },
+    ],
+  },
+
+  // Developer and real estate agency in the UAE
+  "uae-real-estate": {
     height: 503,
+    metricStyle: "list",
     media: [
       {
         kind: "phone",
@@ -101,10 +147,10 @@ const LAYOUT: CaseLayout[] = [
     ],
   },
 
-  // 2 — Permanent makeup studio in Spain
-  {
+  // Permanent makeup studio in Spain
+  "pmu-studio-spain": {
     height: 503,
-    titleSize: 'md',
+    titleSize: "md",
     media: [
       {
         kind: "phone",
@@ -159,7 +205,7 @@ const LAYOUT: CaseLayout[] = [
   },
 
   // // 3 — Inspection of apartments, houses and commercial real estate
-  // {
+  // "property-inspection": {
   //   height: 503,
   //   media: [
   //     {
@@ -204,10 +250,10 @@ const LAYOUT: CaseLayout[] = [
   //   ],
   // },
 
-  // 4 — Cosmetology clinic in Israel
-  {
+  // Cosmetology clinic in Israel
+  "cosmetology-israel": {
     height: 531,
-    titleSize: 'md',
+    titleSize: "md",
     media: [
       {
         kind: "chat",
@@ -256,10 +302,10 @@ const LAYOUT: CaseLayout[] = [
     ],
   },
 
-  // 5 — Travel company in the UAE
-  {
+  // Travel company in the UAE
+  "travel-uae": {
     height: 525,
-    titleSize: 'md',
+    titleSize: "md",
     media: [
       {
         kind: "phone",
@@ -308,8 +354,8 @@ const LAYOUT: CaseLayout[] = [
     ],
   },
 
-  // 6 — RBmotors ATV manufacturing and sales
-  {
+  // RBmotors ATV manufacturing and sales
+  rbmotors: {
     height: 525,
     media: [
       { kind: "board", w: 400, h: 250, x: 580, y: 40 },
@@ -331,8 +377,8 @@ const LAYOUT: CaseLayout[] = [
     ],
   },
 
-  // 8 — REAKTIV ski apparel brand
-  {
+  // REAKTIV ski apparel brand
+  reaktiv: {
     height: 503,
     media: [
       {
@@ -359,7 +405,7 @@ const LAYOUT: CaseLayout[] = [
       },
     ],
   },
-];
+};
 
 function Shot({ media }: { media: Media }) {
   const geometry = {
@@ -394,42 +440,47 @@ type Props = { items: CaseItem[]; tasksLabel: string };
  */
 export default function CaseSlider({ items, tasksLabel }: Props) {
   const [active, setActive] = useState(0);
+  // With a single case there is nothing to switch between: no tabs, no autoplay.
+  const hasTabs = items.length > 1;
 
   // Advance automatically; picking a tab restarts the timer.
   useEffect(() => {
+    if (!hasTabs) return;
     const id = window.setTimeout(
       () => setActive((i) => (i + 1) % items.length),
       AUTOPLAY_MS,
     );
     return () => window.clearTimeout(id);
-  }, [active, items.length]);
+  }, [active, hasTabs, items.length]);
 
   return (
     <>
-      <div className="cases__tabs" role="tablist">
-        {items.map((item, i) => (
-          <button
-            key={i}
-            type="button"
-            role="tab"
-            aria-selected={i === active}
-            aria-label={item.label}
-            className={`cases__tab ${i === active ? "is-active" : ""}`}
-            onClick={() => setActive(i)}
-          >
-            {i + 1}
-          </button>
-        ))}
-      </div>
+      {hasTabs && (
+        <div className="cases__tabs" role="tablist">
+          {items.map((item, i) => (
+            <button
+              key={i}
+              type="button"
+              role="tab"
+              aria-selected={i === active}
+              aria-label={item.label}
+              className={`cases__tab ${i === active ? "is-active" : ""}`}
+              onClick={() => setActive(i)}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className="cases__stage">
         {items.map((item, i) => {
-          const layout = LAYOUT[i];
+          const layout = LAYOUTS[item.id];
           return (
             <article
-              key={i}
-              role="tabpanel"
-              aria-hidden={i !== active}
+              key={item.id}
+              role={hasTabs ? "tabpanel" : undefined}
+              aria-hidden={hasTabs ? i !== active : undefined}
               className={[
                 "case",
                 i === active && "is-active",
@@ -450,7 +501,9 @@ export default function CaseSlider({ items, tasksLabel }: Props) {
               <div className="case__glow" />
               <div className="case__content">
                 <h3 className="case__title">{item.title}</h3>
-                <p className={`case__metric ${i === 0 ? "t-body" : ""}`}>
+                <p
+                  className={`case__metric ${layout?.metricStyle === "list" ? "t-body" : ""}`}
+                >
                   {item.metric}
                 </p>
                 <p className="case__label t-body">

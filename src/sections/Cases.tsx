@@ -5,10 +5,11 @@ import type { Translator } from '../i18n/translator';
 import CaseSlider, { type CaseItem } from './CaseSlider';
 import './Cases.css';
 
-type Case = { title: string; metric: string; tasks: string[] };
+type Case = { id: string; title: string; metric: string; tasks: string[] };
 
 export default function Cases({ tr }: { tr: Translator }) {
   const items: CaseItem[] = tr.raw<Case[]>('cases.items').map((c, i) => ({
+    id: c.id,
     label: stripTags(c.title),
     title: tr.rich(`cases.items.${i}.title`),
     metric: tr.rich(`cases.items.${i}.metric`),

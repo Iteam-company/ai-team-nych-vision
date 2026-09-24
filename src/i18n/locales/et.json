@@ -157,77 +157,17 @@
   },
   "cases": {
     "title": "Edukad AI-assistentide juurutamised",
-    "tasksLabel": "AI-konsultandi ülesanded:",
+    "tasksLabel": "AI-agendi ülesanded:",
     "items": [
       {
-        "title": "Kinnisvaraarendaja ja kinnisvarabüroo AÜE-s",
-        "metric": "— Kvalifitseeritud müügivihje konversioon kasvas <b>20%-lt 60%-ni</b><br/>— Kohtumise konversioon on <b>21%</b><br/>— Tehingu kestus vähenes <b>1,5 kuuni</b>",
+        "id": "ai-content-studio",
+        "title": "AI-sisu tootmise stuudio",
+        "metric": "— Vastamisaeg lühenes <b>4 tunnilt alla minuti</b><br/>— Konversioon päringust tutvustava vestluseni kasvas <b>38%</b><br/>— <b>3×</b> rohkem kvalifitseeritud briife kuus",
         "tasks": [
-          "Päringute töötlemine CRM-süsteemis Bitrix24",
-          "Kliendi kvalifitseerimine ja sobivate objektide variantide saatmine",
-          "Agendiga kohtumise määramine ja aja broneerimine Google Calendaris",
-          "Kliendikaardi täitmine CRM-süsteemis ja liigutamine tehingu etappide vahel"
-        ]
-      },
-      {
-        "title": "Püsimeigi stuudio Hispaanias",
-        "metric": "Proovikülastuse tasulise broneeringu konversioon <b>26%</b>",
-        "tasks": [
-          "Sissetulevate päringute töötlemine CRM-süsteemis Kommo",
-          "Teenusele broneerimine Altegio broneerimissüsteemis",
-          "Makseslingi saatmine",
-          "Kliendikaardi täitmine CRM-süsteemis ja liigutamine tehingu etappide vahel"
-        ]
-      },
-      {
-        "title": "Korterite, majade, suvilate ja ärikinnisvara vastuvõtt ning ekspertiis kogu Venemaal",
-        "metric": "Teenusele broneerimise konversioon kõigist päringutest <b>51,5%</b>",
-        "tasks": [
-          "Klientide nõustamine amoCRM-is teenuste hindade kohta",
-          "Vabade aegade broneerimine Yclientsi süsteemis",
-          "Kliendikaardi täitmine CRM-süsteemis ja liigutamine tehingu etappide vahel",
-          "Klientidele visiidi meeldetuletuste saatmine"
-        ]
-      },
-      {
-        "title": "Kosmeetikakliinik Iisraelis",
-        "metric": "Uute klientide broneeringute konversioon <b>40,2%</b>, korduvbroneeringud <b>23,6%</b>",
-        "tasks": [
-          "Sissetulevate taotluste töötlemine amoCRM-is",
-          "Vabade aegade leidmine ja teenustele broneerimine Google Calendaris",
-          "Meeldetuletuste saatmine",
-          "Kliendikaardi täitmine CRM-süsteemis ja liigutamine tehingu etappide vahel",
-          "Töötamine uute ja püsiklientide andmebaasiga"
-        ]
-      },
-      {
-        "title": "Reisifirma AÜE-s",
-        "metric": "Konversioon esimese kohtumiseni <b>35–55%</b>",
-        "tasks": [
-          "100% päringute töötlemine WhatsAppis ja Telegramis 24/7",
-          "Müügivihje kvalifitseerimine: kuupäevade, eelarve, pere koosseisu ja kliendi soovide täpsustamine.",
-          "Asjakohaste reisivariantide valimine ja saatmine nagu kogenud reisikonsultant.",
-          "Kohtumise broneerimine Google Calendaris",
-          "Kliendi andmete sisestamine Bitrix24-sse ja tema juhtimine läbi müügilehtri"
-        ]
-      },
-      {
-        "title": "RBmotorsi ATV-de tootmine ja müük",
-        "metric": "AI-müügijuht töötleb <b>100%</b> sissetulevatest päringutest",
-        "tasks": [
-          "Nõustamine ATV mudelite ja lisavarustuse kohta",
-          "Testisõidu kohtumise korraldamine",
-          "Kliendikaardi täitmine amoCRM-is ja müügivihjete liigutamine tehingu etappide vahel",
-          "Müügijuhtidele teavituste saatmine uuest päringust koos kokkulepitud kohtumisajaga"
-        ]
-      },
-      {
-        "title": "Suusariiete bränd REAKTIV",
-        "metric": "Müügikonversioon <b>26,5%</b>",
-        "tasks": [
-          "Klientide nõustamine<br/>toodete, kampaaniate, suuruste ja rõivaste omaduste kohta",
-          "Toodete reklaamimine Wildberriesis ja Ozonis",
-          "Keerukate päringute suunamine müügijuhile klientide rahulolu tagamiseks"
+          "Päringutele vastamine Telegramis ja WhatsAppis 24/7",
+          "Briefi kvalifitseerimine: sisu tüüp, maht, tähtaeg ja eelarve",
+          "Sobivate portfoolio näidete ja pakettide hindade saatmine",
+          "Tutvumiskõne broneerimine ja tehingu loomine koos täieliku briefiga HubSpotis"
         ]
       }
     ]

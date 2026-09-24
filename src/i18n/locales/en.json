@@ -156,67 +156,17 @@
   },
   "cases": {
     "title": "Successful AI-assistant implementations",
-    "tasksLabel": "AI consultant's tasks:",
+    "tasksLabel": "AI agent's tasks:",
     "items": [
       {
-        "title": "Developer and real estate agency in the UAE",
-        "metric": "— Conversion to qualified lead grew <b>from 20% to 60%</b><br/>— Conversion to meeting is<b> 21%</b><br/>— Deal cycle shortened <b>to 1.5 months</b>",
+        "id": "ai-content-studio",
+        "title": "AI content production studio",
+        "metric": "— Response time dropped <b>from 4 hours to under a minute</b><br/>— The conversion rate from inquiry to introductory conversation increased by <b>38%</b><br/>— <b>3×</b> more qualified briefs a month",
         "tasks": [
-          "Processing leads in Bitrix24 CRM",
-          "Qualifying clients and sending matching property options",
-          "Scheduling meetings with an agent and booking time in Google Calendar",
-          "Filling in client cards in the CRM and moving them through deal stages"
-        ]
-      },
-      {
-        "title": "Permanent makeup studio in Spain",
-        "metric": "Conversion to a paid trial visit <b>26%</b>",
-        "tasks": [
-          "Processing incoming leads in Kommo CRM",
-          "Booking services in the Altegio booking system",
-          "Sending payment links",
-          "Filling in client cards in the CRM and moving them through deal stages"
-        ]
-      },
-      {
-        "title": "Cosmetology clinic in Israel",
-        "metric": "Booking conversion for new clients <b>40.2%</b>, returning clients <b>23.6%</b>",
-        "tasks": [
-          "Processing incoming leads in amoCRM",
-          "Finding free slots and booking services in Google Calendar",
-          "Sending reminders",
-          "Filling in client cards in the CRM and moving them through deal stages",
-          "Working with the base of new and returning clients"
-        ]
-      },
-      {
-        "title": "Travel company in the UAE",
-        "metric": "Conversion to the first meeting <b>35–55%</b>",
-        "tasks": [
-          "Processing 100% of leads in WhatsApp and Telegram 24/7",
-          "Qualifying leads: clarifies dates, budget, family composition and client wishes.",
-          "Selecting and sending up-to-date tour options like an experienced agent.",
-          "Booking a meeting in Google Calendar",
-          "Entering client data into Bitrix24 and moving it through the sales funnel"
-        ]
-      },
-      {
-        "title": "RBmotors ATV manufacturing and sales",
-        "metric": "<b>100%</b> of incoming leads are handled by the AI manager",
-        "tasks": [
-          "Consulting on ATV models and additional equipment",
-          "Arranging test-drive meetings",
-          "Filling in client cards in amoCRM and moving leads through deal stages",
-          "Notifying managers about new leads with an agreed meeting time"
-        ]
-      },
-      {
-        "title": "REAKTIV ski apparel brand",
-        "metric": "Conversion to sale <b>26.5%</b>",
-        "tasks": [
-          "Consulting clients<br/>on products, promotions, sizes and clothing features",
-          "Promoting products on Wildberries and Ozon",
-          "Redirecting complex requests to a manager to keep customers satisfied"
+          "Answering inquiries from Telegram and WhatsApp 24/7",
+          "Qualifying the brief: content type, volume, deadline and budget",
+          "Sending matching portfolio examples and package pricing",
+          "Booking a discovery call and creating the deal, with the full brief, in HubSpot"
         ]
       }
     ]
