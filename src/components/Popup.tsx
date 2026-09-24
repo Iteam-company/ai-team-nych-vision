@@ -2,7 +2,7 @@
 
 import { useEffect, type ReactNode } from 'react';
 import AnimatedLine from './AnimatedLine';
-import ImagePlaceholder from './ImagePlaceholder';
+import BrandLogo from './BrandLogo';
 import LazyLeadForm from './LazyLeadForm';
 import type { LeadFormProps } from './LeadForm';
 import { usePopup } from './PopupContext';
@@ -48,7 +48,7 @@ export default function Popup({ title, text, closeLabel, form }: Props) {
             width={280}
             height={94}
           />
-          <ImagePlaceholder label="Nychvision logo" width={103} height={30} className="popup__logo" />
+          <BrandLogo className="popup__logo" />
         </div>
         <LazyLeadForm {...form} id="popup-form" />
       </div>

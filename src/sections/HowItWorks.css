@@ -123,7 +123,7 @@
   padding: 32px 0 25px 9px;
 }
 
-.how__media--dialog .ph:last-child {
+.how__media--dialog .mk:last-child {
   margin-left: 58px;
 }
 
@@ -205,12 +205,14 @@
     display: none;
   }
 
-  .how__media--dialog .ph {
+  .how__media--dialog .mk {
     width: 100% !important;
     max-width: 383px;
+    height: auto !important;
+    min-height: 104px;
   }
 
-  .how__media--dialog .ph:last-child {
+  .how__media--dialog .mk:last-child {
     margin-left: 0;
   }
 }
@@ -253,7 +255,7 @@
     align-items: center;
   }
 
-  .how__media--dialog .ph:last-child {
+  .how__media--dialog .mk:last-child {
     margin-left: 0;
   }
 

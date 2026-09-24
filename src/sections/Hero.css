@@ -107,11 +107,9 @@
 
 .hero__phone {
   position: absolute;
-  top: 90px;
-  left: 806px;
-  border-radius: 40px;
-  background-color: rgba(19, 19, 19, 0.6);
-  backdrop-filter: blur(2px);
+  top: 86px;
+  left: 812px;
+  width: 292px;
 }
 
 @media (max-width: 1199px) {
@@ -127,8 +125,7 @@
   .hero__phone {
     left: auto;
     right: 20px;
-    width: 260px !important;
-    height: 537px !important;
+    width: 256px;
   }
 
   .hero__canvas {
@@ -190,8 +187,7 @@
     top: auto;
     right: auto;
     order: 10;
-    width: 230px !important;
-    height: 475px !important;
+    width: 244px;
     margin-top: 48px;
   }
 

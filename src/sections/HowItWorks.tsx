@@ -1,6 +1,6 @@
 import AnimatedLine from '../components/AnimatedLine';
 import Button from '../components/Button';
-import ImagePlaceholder from '../components/ImagePlaceholder';
+import { CrmCalendar, CrmEvent, DialogCard } from '../components/Mockups';
 import type { Translator } from '../i18n/translator';
 import './HowItWorks.css';
 
@@ -28,14 +28,47 @@ function Column({ tr, group }: { tr: Translator; group: 'dialog' | 'crm' }) {
 
       {group === 'dialog' ? (
         <div className="how__media how__media--dialog">
-          <ImagePlaceholder label="Chat message · manager" width={359} height={104} />
-          <ImagePlaceholder label="Chat message · manager" width={383} height={111} />
+          <DialogCard
+            width={359}
+            height={104}
+            name="AI agent"
+            role="00:12 · night"
+            text="“Two units left in that tower. Before I send the plans — is this for you to live in, or an investment?”"
+          />
+          <DialogCard
+            width={383}
+            height={111}
+            name="Sofia"
+            role="sales manager"
+            text="“Picked her up at the viewing. Budget, timeline and financing were already in the card — I just had to close.”"
+          />
         </div>
       ) : (
         <div className="how__media how__media--crm">
-          <ImagePlaceholder label="CRM event" width={171} height={58} className="how__m1" />
-          <ImagePlaceholder label="CRM event" width={171} height={60} className="how__m2" />
-          <ImagePlaceholder label="CRM event" width={148} height={56} className="how__m3" />
+          <CrmEvent
+            kind="lead"
+            title="New lead"
+            meta="Telegram · 02:14"
+            width={171}
+            height={58}
+            className="how__m1"
+          />
+          <CrmEvent
+            kind="stage"
+            title="Stage → Meeting"
+            meta="moved by AI"
+            width={171}
+            height={60}
+            className="how__m2"
+          />
+          <CrmEvent
+            kind="payment"
+            title="Deposit paid"
+            meta="link sent 03:47"
+            width={148}
+            height={56}
+            className="how__m3"
+          />
           <AnimatedLine
             className="how__connectors"
             d={CONNECTORS}
@@ -43,7 +76,7 @@ function Column({ tr, group }: { tr: Translator; group: 'dialog' | 'crm' }) {
             width={133}
             height={167}
           />
-          <ImagePlaceholder label="Tablet · CRM calendar" width={350} height={232} className="how__m4" />
+          <CrmCalendar width={350} height={232} className="how__m4" />
         </div>
       )}
     </div>
