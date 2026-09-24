@@ -1,10 +1,9 @@
 import Button from "../components/Button";
-import ImagePlaceholder from "../components/ImagePlaceholder";
 import GlowScene from "../effects/GlowScene";
 import type { Translator } from "../i18n/translator";
 import TeamPhotoSlider from "./TeamPhotoSlider";
 import "./Team.css";
-import BrandLogo, { BrandMark } from "../components/BrandLogo";
+import { BrandMark } from "../components/BrandLogo";
 
 /*
  * "Trusted by" is hidden for now — see Team.tsx below. Logo sizes and
