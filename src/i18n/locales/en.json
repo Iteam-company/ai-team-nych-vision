@@ -240,5 +240,53 @@
     "registryCode": "Registry code",
     "address": "Address",
     "email": "E-mail address"
+  },
+  "cookies": {
+    "text": "We use cookies to improve your experience and make our website more convenient to use. They are only set if you allow them.",
+    "accept": "Enable cookies",
+    "decline": "Decline",
+    "close": "Close",
+    "settings": "Cookie settings"
+  },
+  "reviews": {
+    "title": "What Our Customers Say:",
+    "ratingLabel": "Rated {rating} out of 5",
+    "items": [
+      {
+        "name": "Олександр К.",
+        "rating": 5,
+        "text": "Раніше заявки з реклами висіли в месенджерах до ранку. Тепер AI-агент відповідає за хвилину, уточнює бюджет і сам записує клієнта на дзвінок. Менеджери працюють лише з тими, хто вже готовий купувати."
+      },
+      {
+        "name": "Марина С.",
+        "rating": 5,
+        "text": "Боялися, що клієнти відчують «робота». Вийшло навпаки: агент пише живою мовою, пам’ятає деталі розмови й не губить жодного звернення. За перший місяць записів на консультації стало помітно більше."
+      },
+      {
+        "name": "Андрій Л.",
+        "rating": 5,
+        "text": "Впровадження зайняло близько двох тижнів. Команда налаштувала сценарії під нашу воронку й підключила CRM — тепер уся історія діалогів в одній картці угоди. Нарешті видно, де ми втрачали клієнтів."
+      }
+    ]
+  },
+  "booking": {
+    "title": "<b>Book a call</b>",
+    "subtitle": "Pick a day and time that works for you — we'll confirm by email.",
+    "date": "Date",
+    "time": "Time",
+    "dateAndTime": "Date & Time",
+    "details": "Your details",
+    "detailsHint": "Name, email, phone",
+    "name": "Your name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "note": "Anything we should know?",
+    "submit": "Book the call",
+    "sending": "Booking…",
+    "success": "Booked! We'll send a confirmation to your email shortly.",
+    "slotTaken": "That time was just taken — please pick another one.",
+    "failed": "Something went wrong. Please try again.",
+    "fieldRequired": "Required",
+    "emailInvalid": "Enter a valid email"
   }
 }

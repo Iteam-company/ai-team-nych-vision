@@ -241,5 +241,32 @@
     "registryCode": "Registrikood",
     "address": "Aadress",
     "email": "E-post"
+  },
+  "cookies": {
+    "text": "Soovime kasutada küpsiseid, et mõista, kust külastajad tulevad, ja veebilehte paremaks muuta. Need salvestatakse ainult teie loal.",
+    "accept": "Luba küpsised",
+    "decline": "Keeldu",
+    "settings": "Küpsiste seaded"
+  },
+  "reviews": {
+    "title": "Mida meie kliendid ütlevad:",
+    "ratingLabel": "Hinne {rating} 5-st",
+    "items": [
+      {
+        "name": "Олександр К.",
+        "rating": 5,
+        "text": "Раніше заявки з реклами висіли в месенджерах до ранку. Тепер AI-агент відповідає за хвилину, уточнює бюджет і сам записує клієнта на дзвінок. Менеджери працюють лише з тими, хто вже готовий купувати."
+      },
+      {
+        "name": "Марина С.",
+        "rating": 5,
+        "text": "Боялися, що клієнти відчують «робота». Вийшло навпаки: агент пише живою мовою, пам’ятає деталі розмови й не губить жодного звернення. За перший місяць записів на консультації стало помітно більше."
+      },
+      {
+        "name": "Андрій Л.",
+        "rating": 5,
+        "text": "Впровадження зайняло близько двох тижнів. Команда налаштувала сценарії під нашу воронку й підключила CRM — тепер уся історія діалогів в одній картці угоди. Нарешті видно, де ми втрачали клієнтів."
+      }
+    ]
   }
 }

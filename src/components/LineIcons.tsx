@@ -113,6 +113,24 @@ export function CalendarIcon(props: Omit<Props, 'title'>) {
   );
 }
 
+export function ClockIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Time" viewBox="0 0 24 24" strokeWidth={1.8} {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3.5 2" />
+    </Icon>
+  );
+}
+
+/** Disclosure caret for the mobile accordion — points down, rotated open via CSS. */
+export function ChevronIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Toggle" viewBox="0 0 24 24" strokeWidth={2} {...props}>
+      <path d="m6 9 6 6 6-6" />
+    </Icon>
+  );
+}
+
 export function CheckIcon(props: Omit<Props, 'title'>) {
   return (
     <Icon title="Done" viewBox="0 0 24 24" strokeWidth={2.4} {...props}>

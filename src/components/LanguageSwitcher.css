@@ -26,7 +26,6 @@
 @media (max-width: 959px) {
   .lang__btn {
     min-width: 44px;
-    min-height: 36px;
     font-size: 14px;
   }
 }
