@@ -1,0 +1,404 @@
+.booking {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  text-align: left;
+}
+
+/*
+ * Desktop base: calendar (left) | divider | contact form (right), both
+ * sections always expanded — the collapsible-card markup (Section, in
+ * Booking.tsx) exists purely for the mobile accordion below, so it is
+ * neutralised here regardless of each section's open/closed state.
+ */
+.booking__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  align-items: start;
+  gap: 36px;
+}
+
+.booking__divider {
+  align-self: stretch;
+  background: var(--color-border);
+}
+
+.booking__section {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.booking__summary {
+  display: none;
+}
+
+.booking__section-body {
+  display: flex !important; /* always shown here, regardless of the [hidden] attribute */
+  flex-direction: column;
+  gap: 28px;
+}
+
+.booking__field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.booking__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.booking__label-icon {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.booking__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.booking__chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 16px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* Date chips: weekday on top, day + month below — reads as a small calendar cell */
+.booking__chip--stacked {
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  height: auto;
+  min-height: 54px;
+  min-width: 64px;
+  padding: 8px 12px;
+  border-radius: 14px;
+}
+
+.booking__chip-weekday {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.booking__chip.is-active .booking__chip-weekday {
+  opacity: 0.85;
+}
+
+.booking__chip-day {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.booking__chip:hover:not(:disabled):not(.is-active) {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.booking__chip.is-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.booking__chip:disabled {
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.booking__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking__field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking__input {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius);
+  color: var(--color-input-text);
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.booking__input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.booking__input:hover {
+  border-color: var(--color-accent);
+}
+
+.booking__input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.booking__input.has-error {
+  border-color: var(--color-error);
+}
+
+.booking__input.has-error:focus {
+  outline-color: var(--color-error);
+}
+
+.booking__field-error {
+  margin: 0;
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+.booking__note {
+  height: auto;
+  min-height: 88px;
+  padding: 14px 20px;
+  resize: vertical;
+}
+
+.booking__error {
+  margin: -2px 0 0;
+  font-size: 14px;
+  color: var(--color-error);
+}
+
+.booking__submit {
+  width: 100%;
+  height: 50px;
+  margin-top: 4px;
+  background: var(--color-accent);
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    filter 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.booking__submit:hover:not([aria-disabled="true"]) {
+  filter: brightness(1.08);
+}
+
+/*
+ * Styled as disabled via aria-disabled, not the native `disabled` attribute,
+ * while the form is merely incomplete (as opposed to a request in flight):
+ * a click still reaches onSubmit, which reveals exactly which required
+ * field is empty or invalid instead of doing nothing.
+ */
+.booking__submit[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.booking__success {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 480px;
+}
+
+.booking__success-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-top: 2px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  color: var(--color-text);
+}
+
+.booking__success p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-text);
+}
+
+/*
+ * Mobile: the calendar and contact sections become independent, collapsible
+ * cards, each toggled by its own button (Section, in Booking.tsx) and
+ * announced to screen readers via aria-expanded. Both can be open at once;
+ * opening one does not force the other shut.
+ */
+@media (max-width: 767px) {
+  .booking__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .booking__divider {
+    display: none;
+  }
+
+  .booking__section {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+  }
+
+  .booking__summary {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .booking__section.is-open .booking__summary {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .booking__summary-icon {
+    display: flex;
+    flex-shrink: 0;
+    color: var(--color-accent);
+  }
+
+  .booking__summary-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .booking__summary-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .booking__summary-value {
+    overflow: hidden;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Redundant with the now-visible fields below, once expanded */
+  .booking__section.is-open .booking__summary-value {
+    display: none;
+  }
+
+  .booking__summary-caret {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+    transition: transform 0.2s ease;
+  }
+
+  .booking__section.is-open .booking__summary-caret {
+    transform: rotate(180deg);
+  }
+
+  .booking__section-body {
+    gap: 20px;
+    padding: 16px;
+  }
+
+  /* Only rule that actually hides a section's body — everything above this
+     breakpoint forces it visible regardless of [hidden] (see the base rule). */
+  .booking__section-body[hidden] {
+    display: none !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .booking__chip {
+    height: 36px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .booking__chip--stacked {
+    min-height: 48px;
+    min-width: 56px;
+    padding: 6px 10px;
+  }
+
+  .booking__submit {
+    margin-top: 0;
+  }
+}
+
+/* A short viewport (landscape phone, a small laptop window): trim the
+   vertical rhythm a bit further so less scrolling is needed either way. */
+@media (max-height: 700px) {
+  .booking__grid {
+    gap: 12px;
+  }
+
+  .booking__section-body {
+    gap: 16px;
+  }
+
+  .booking__contact {
+    gap: 10px;
+  }
+
+  .booking__input {
+    height: 44px;
+  }
+
+  .booking__note {
+    min-height: 64px;
+  }
+}

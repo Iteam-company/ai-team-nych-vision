@@ -1,7 +1,7 @@
 import SpotlightTracker from "../effects/SpotlightTracker";
 import type { Locale } from "../i18n/config";
 import { getTranslator } from "../i18n/translator";
-import { getLeadFormProps } from "../lib/leadForm";
+import { getBookingProps } from "../lib/booking";
 import Cases from "../sections/Cases";
 import Contacts from "../sections/Contact";
 import Features from "../sections/Features";
@@ -44,10 +44,10 @@ export default function LandingPage({ locale }: { locale: Locale }) {
       </main>
       <Footer tr={tr} />
       <Popup
-        title={tr.rich("popup.title")}
-        text={tr.rich("popup.text")}
+        title={tr.rich("booking.title")}
+        text={tr.t("booking.subtitle")}
         closeLabel={tr.t("common.close")}
-        form={getLeadFormProps(tr)}
+        booking={getBookingProps(tr)}
       />
       <CookieBanner
         text={tr.t("cookies.text")}

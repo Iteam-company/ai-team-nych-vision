@@ -3,7 +3,13 @@
   inset: 0;
   z-index: 100;
   display: flex;
+  /* Fallback for browsers without safe/unsafe alignment (dropped as a whole
+     declaration, so the line above still applies): keeps the dialog centered
+     when it fits. "safe center" additionally guarantees its top edge — and
+     the close button on it — can always be scrolled into view when it
+     doesn't fit, instead of being clipped off-screen (a WebKit issue). */
   align-items: center;
+  align-items: safe center;
   justify-content: center;
   padding: 20px;
   overflow-y: auto;
@@ -17,10 +23,23 @@
   }
 }
 
+.popup__box {
+  position: relative;
+  width: 1100px;
+  max-width: 100%;
+  padding: 56px 48px 48px;
+  background: var(--color-popup-bg);
+  border: 1px solid var(--color-popup-border);
+  border-radius: var(--radius);
+}
+
+/* Anchored to the box (its nearest positioned ancestor), not the viewport —
+   always paints above the box's own content and scrolls together with it. */
 .popup__close {
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
+  z-index: 2;
   width: 23px;
   height: 23px;
   padding: 0;
@@ -45,64 +64,56 @@
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.popup__box {
-  position: relative;
-  display: grid;
-  grid-template-columns: 568px 531px;
-  width: 1162px;
-  max-width: 100%;
-  min-height: 438px;
-  padding: 96px 32px 40px 31px;
-  background: var(--color-popup-bg);
-  border: 1px solid var(--color-popup-border);
-  border-radius: var(--radius);
-}
-
-.popup__info {
-  position: relative;
+.popup__header {
+  max-width: 640px;
+  /* Room for the close button in the corner, above it. */
+  padding-right: 40px;
+  margin-bottom: 40px;
 }
 
 .popup__text {
-  max-width: 565px;
-  margin-top: 21px;
+  margin-top: 12px;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 24px;
   font-weight: 400;
+  color: var(--color-text-muted);
 }
 
-.popup__line {
-  position: absolute;
-  top: 142px;
-  left: 240px;
-}
-
-.popup__logo {
-  position: absolute;
-  top: 188px;
-  left: 417px;
-}
-
-@media (max-width: 1199px) {
-  .popup__box {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+/* Short viewports (a landscape phone, a small laptop window): starting the
+   dialog at the top and scrolling down is more predictable than a centered
+   dialog whose top can end up clipped above the visible area. */
+@media (max-height: 700px) {
+  .popup {
+    align-items: flex-start;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
-  .popup__line,
-  .popup__logo {
-    display: none;
+  .popup__box {
+    padding-top: 44px;
+  }
+
+  .popup__header {
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 959px) {
   .popup__box {
-    grid-template-columns: minmax(0, 1fr);
-    padding: 50px 20px 30px;
-    text-align: center;
+    padding: 44px 32px 32px;
   }
 
-  .popup__box .lead-form {
-    margin: 0 auto;
-    text-align: left;
+  .popup__header {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 639px) {
+  .popup__box {
+    padding: 36px 20px 24px;
+  }
+
+  .popup__header {
+    padding-right: 32px;
   }
 }

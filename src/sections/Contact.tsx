@@ -1,27 +1,28 @@
-import AnimatedLine from "../components/AnimatedLine";
-import LazyLeadForm from "../components/LazyLeadForm";
+import LazyBooking from "../components/LazyBooking";
 import { Translator } from "../i18n/translator";
-import { getLeadFormProps } from "../lib/leadForm";
+import { getBookingProps } from "../lib/booking";
 import "./Contact.css";
 
-const CONTACT_PATH = "M1 1V92.66H279.05";
-
+/**
+ * The same Booking form as the popup, inline on the page — for a visitor who
+ * scrolls this far, or arrives via a #contact link, without needing a CTA
+ * click. The panel around it mirrors the popup's own box (see Popup.css)
+ * so the two read as the same UI, just modal vs. inline.
+ */
 export default function Contacts({ tr }: { tr: Translator }) {
   return (
-    <section className="contact">
-      <div className="contact__container" id="contact">
-        <h2 className="contact__title h-section is-accent">
-          {tr.rich("contact.title")}
-        </h2>
-        <AnimatedLine
-          className="contact__line"
-          d={CONTACT_PATH}
-          viewBox="0 0 280.05 93.66"
-          width={280}
-          height={94}
-        />
-        <div className="contact__form">
-          <LazyLeadForm {...getLeadFormProps(tr)} id="contact-form" />
+    <section className="contact" id="contact">
+      <div className="container">
+        <div className="contact__panel">
+          <header className="contact__header">
+            <h2 className="contact__title h-section is-accent">
+              {tr.rich("contact.title")}
+            </h2>
+            <p className="contact__text">{tr.t("booking.subtitle")}</p>
+          </header>
+          <div className="contact__form">
+            <LazyBooking {...getBookingProps(tr)} id="contact-booking" />
+          </div>
         </div>
       </div>
     </section>

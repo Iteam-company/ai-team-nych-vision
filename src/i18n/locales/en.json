@@ -267,5 +267,25 @@
         "text": "Впровадження зайняло близько двох тижнів. Команда налаштувала сценарії під нашу воронку й підключила CRM — тепер уся історія діалогів в одній картці угоди. Нарешті видно, де ми втрачали клієнтів."
       }
     ]
+  },
+  "booking": {
+    "title": "<b>Book a call</b>",
+    "subtitle": "Pick a day and time that works for you — we'll confirm by email.",
+    "date": "Date",
+    "time": "Time",
+    "dateAndTime": "Date & Time",
+    "details": "Your details",
+    "detailsHint": "Name, email, phone",
+    "name": "Your name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "note": "Anything we should know?",
+    "submit": "Book the call",
+    "sending": "Booking…",
+    "success": "Booked! We'll send a confirmation to your email shortly.",
+    "slotTaken": "That time was just taken — please pick another one.",
+    "failed": "Something went wrong. Please try again.",
+    "fieldRequired": "Required",
+    "emailInvalid": "Enter a valid email"
   }
 }

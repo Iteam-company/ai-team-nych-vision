@@ -1,61 +1,50 @@
 .contact {
-  display: flex;
-  justify-content: center;
-  padding: 10px 0px;
+  padding: 30px 0;
 }
 
-.contact__container {
+/* Same box treatment as the popup (Popup.css) — same padding scale and
+   breakpoints — so the inline and modal booking forms read as one UI. */
+.contact__panel {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 531px;
-  column-gap: 40px;
-  margin-bottom: 30px;
+  padding: 56px 0px;
 }
 
-.contact__line {
-  position: absolute;
-  top: 142px;
-  left: 240px;
+.contact__header {
+  max-width: 640px;
+  margin-bottom: 40px;
 }
 
 .contact__form {
-  /* Reserve the form's height: it loads in the browser after the page. */
-  min-height: 239px;
-  padding-top: 26px;
+  padding: 20px 30px;
+  background: var(--color-panel-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
 }
 
-@media (max-width: 1199px) {
-  .contact__container {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
+.contact__text {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--color-text-muted);
 }
 
 @media (max-width: 959px) {
-  .contact__container {
-    grid-template-columns: minmax(0, 1fr);
-    justify-items: center;
-    margin-top: 80px;
-    text-align: center;
+  .contact__panel {
+    padding: 44px 32px 32px;
   }
 
-  .contact__line {
-    display: none;
-  }
-
-  .contact__form {
-    width: 100%;
-    max-width: 531px;
-    text-align: left;
+  .contact__header {
+    margin-bottom: 32px;
   }
 }
 
 @media (max-width: 639px) {
-  .contact__container {
-    margin-top: 64px;
+  .contact {
+    padding: 24px 0;
   }
 
-  .contact__form {
-    padding: 0px 10px;
+  .contact__panel {
+    padding: 36px 20px 24px;
   }
 }
