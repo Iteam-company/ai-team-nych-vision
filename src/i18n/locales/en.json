@@ -242,9 +242,10 @@
     "email": "E-mail address"
   },
   "cookies": {
-    "text": "We'd like to use cookies to understand where our visitors come from and improve this site. They are only set if you allow them.",
+    "text": "We use cookies to improve your experience and make our website more convenient to use. They are only set if you allow them.",
     "accept": "Enable cookies",
     "decline": "Decline",
+    "close": "Close",
     "settings": "Cookie settings"
   },
   "reviews": {

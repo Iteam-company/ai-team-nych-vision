@@ -53,6 +53,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
         text={tr.t("cookies.text")}
         acceptLabel={tr.t("cookies.accept")}
         declineLabel={tr.t("cookies.decline")}
+        closeLabel={tr.t("cookies.close")}
       />
     </PopupProvider>
   );
