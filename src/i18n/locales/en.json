@@ -240,5 +240,32 @@
     "registryCode": "Registry code",
     "address": "Address",
     "email": "E-mail address"
+  },
+  "cookies": {
+    "text": "We'd like to use cookies to understand where our visitors come from and improve this site. They are only set if you allow them.",
+    "accept": "Enable cookies",
+    "decline": "Decline",
+    "settings": "Cookie settings"
+  },
+  "reviews": {
+    "title": "What Our Customers Say:",
+    "ratingLabel": "Rated {rating} out of 5",
+    "items": [
+      {
+        "name": "Олександр К.",
+        "rating": 5,
+        "text": "Раніше заявки з реклами висіли в месенджерах до ранку. Тепер AI-агент відповідає за хвилину, уточнює бюджет і сам записує клієнта на дзвінок. Менеджери працюють лише з тими, хто вже готовий купувати."
+      },
+      {
+        "name": "Марина С.",
+        "rating": 5,
+        "text": "Боялися, що клієнти відчують «робота». Вийшло навпаки: агент пише живою мовою, пам’ятає деталі розмови й не губить жодного звернення. За перший місяць записів на консультації стало помітно більше."
+      },
+      {
+        "name": "Андрій Л.",
+        "rating": 5,
+        "text": "Впровадження зайняло близько двох тижнів. Команда налаштувала сценарії під нашу воронку й підключила CRM — тепер уся історія діалогів в одній картці угоди. Нарешті видно, де ми втрачали клієнтів."
+      }
+    ]
   }
 }

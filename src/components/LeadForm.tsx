@@ -7,6 +7,8 @@ import etLabels from 'react-phone-number-input/locale/et.json';
 import ruLabels from 'react-phone-number-input/locale/ru.json';
 import uaLabels from 'react-phone-number-input/locale/ua.json';
 import 'react-phone-number-input/style.css';
+import { collectVisitorData } from '../lib/cookies';
+import { submitLead } from '../lib/leads';
 import './LeadForm.css';
 
 /** Country names in the country picker, keyed by our locale codes. */
@@ -48,7 +50,14 @@ export default function LeadForm({ locale, labels, id }: LeadFormProps) {
       setError(true);
       return;
     }
-    // TODO: send the lead (name + E.164 phone) to the CRM endpoint.
+    void submitLead({
+      name: String(new FormData(e.currentTarget).get('name') ?? '').trim(),
+      phone,
+      locale,
+      submittedAt: new Date().toISOString(),
+      // Cookies + source data, only if the visitor accepted cookies.
+      visitor: collectVisitorData(),
+    });
     setSent(true);
   };
 

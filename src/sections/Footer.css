@@ -101,3 +101,21 @@
     height: 160px !important;
   }
 }
+
+/* "Cookie settings" — styled like the footer's links */
+.footer__cookies {
+  margin-top: 14px;
+  padding: 6px 0;
+  background: none;
+  border: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.footer__cookies:hover {
+  color: var(--color-accent);
+}

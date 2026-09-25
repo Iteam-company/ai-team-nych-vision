@@ -1,4 +1,5 @@
 import BrandLogo from '../components/BrandLogo';
+import CookieSettingsButton from '../components/CookieSettingsButton';
 import type { Translator } from '../i18n/translator';
 import { COMPANY } from '../lib/company';
 import './Footer.css';
@@ -27,6 +28,7 @@ export default function Footer({ tr }: { tr: Translator }) {
               </dd>
             </div>
           </dl>
+          <CookieSettingsButton label={tr.t('cookies.settings')} className="footer__cookies" />
         </address>
       </div>
     </footer>

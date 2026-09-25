@@ -1,20 +1,24 @@
-import SpotlightTracker from '../effects/SpotlightTracker';
-import type { Locale } from '../i18n/config';
-import { getTranslator } from '../i18n/translator';
-import { getLeadFormProps } from '../lib/leadForm';
-import Cases from '../sections/Cases';
-import Features from '../sections/Features';
+import SpotlightTracker from "../effects/SpotlightTracker";
+import type { Locale } from "../i18n/config";
+import { getTranslator } from "../i18n/translator";
+import { getLeadFormProps } from "../lib/leadForm";
+import Cases from "../sections/Cases";
+import Contacts from "../sections/Contact";
+import Features from "../sections/Features";
 // import FinalCta from '../sections/FinalCta';
-import Footer from '../sections/Footer';
-import Hero from '../sections/Hero';
-import HowItWorks from '../sections/HowItWorks';
-import PainPoints from '../sections/PainPoints';
-import Results from '../sections/Results';
-import Stages from '../sections/Stages';
-import Team from '../sections/Team';
-import Popup from './Popup';
-import { PopupProvider } from './PopupContext';
-import StructuredData from './StructuredData';
+import Footer from "../sections/Footer";
+import Hero from "../sections/Hero";
+import HowItWorks from "../sections/HowItWorks";
+import PainPoints from "../sections/PainPoints";
+import Results from "../sections/Results";
+import Reviews from "../sections/Reviews";
+import Stages from "../sections/Stages";
+import Team from "../sections/Team";
+import CookieBanner from "./CookieBanner";
+// import CookieDebugPanel from "./CookieDebugPanel";
+import Popup from "./Popup";
+import { PopupProvider } from "./PopupContext";
+import StructuredData from "./StructuredData";
 
 /** The whole landing page for one language. Rendered to static HTML at build time. */
 export default function LandingPage({ locale }: { locale: Locale }) {
@@ -35,15 +39,24 @@ export default function LandingPage({ locale }: { locale: Locale }) {
         </div>
         <Team tr={tr} />
         <Stages tr={tr} />
+        <Reviews tr={tr} />
+        <Contacts tr={tr} />
         {/* <FinalCta tr={tr} /> */}
       </main>
       <Footer tr={tr} />
       <Popup
-        title={tr.rich('popup.title')}
-        text={tr.rich('popup.text')}
-        closeLabel={tr.t('common.close')}
+        title={tr.rich("popup.title")}
+        text={tr.rich("popup.text")}
+        closeLabel={tr.t("common.close")}
         form={getLeadFormProps(tr)}
       />
+      <CookieBanner
+        text={tr.t("cookies.text")}
+        acceptLabel={tr.t("cookies.accept")}
+        declineLabel={tr.t("cookies.decline")}
+      />
+      {/* Testing aid: renders nothing unless the URL has ?debug=cookies */}
+      {/* <CookieDebugPanel /> */}
     </PopupProvider>
   );
 }
