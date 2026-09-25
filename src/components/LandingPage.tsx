@@ -15,7 +15,6 @@ import Reviews from "../sections/Reviews";
 import Stages from "../sections/Stages";
 import Team from "../sections/Team";
 import CookieBanner from "./CookieBanner";
-// import CookieDebugPanel from "./CookieDebugPanel";
 import Popup from "./Popup";
 import { PopupProvider } from "./PopupContext";
 import StructuredData from "./StructuredData";
@@ -55,8 +54,6 @@ export default function LandingPage({ locale }: { locale: Locale }) {
         acceptLabel={tr.t("cookies.accept")}
         declineLabel={tr.t("cookies.decline")}
       />
-      {/* Testing aid: renders nothing unless the URL has ?debug=cookies */}
-      {/* <CookieDebugPanel /> */}
     </PopupProvider>
   );
 }

@@ -108,6 +108,8 @@ export function captureAttribution() {
     const value = params.get(key);
     if (value) data[key] = clip(value);
   }
+  // The language redirect in src/proxy.ts is an HTTP redirect, so the
+  // browser keeps the original external referrer here.
   if (document.referrer) {
     try {
       const referrer = new URL(document.referrer);
