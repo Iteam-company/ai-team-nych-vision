@@ -10,7 +10,8 @@ import "./Hero.css";
 const CTA_FRAME =
   "M1 21C1 9.954 9.954 1 21 1H646C657.046 1 666 9.954 666 21V120C666 131.046 657.046 140 646 140H21C9.954 140 1 131.046 1 120Z";
 
-const TELEGRAM_USER = process.env.TELEGRAM_USER?.trim().replace(/^@/, "");
+// const TELEGRAM_USER = process.env.TELEGRAM_USER?.trim().replace(/^@/, "");
+const TELEGRAM_USER = "+380673686408";
 const TELEGRAM_URL = TELEGRAM_USER
   ? `https://t.me/${TELEGRAM_USER}`
   : undefined;
