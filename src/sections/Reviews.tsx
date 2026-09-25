@@ -14,8 +14,8 @@ function Star({ filled }: { filled: boolean }) {
 }
 
 /**
- * Customer reviews. Each card is a black body plus a separate rating strip;
- * where they meet, their rounded corners form the side notches of the design.
+ * Customer reviews. Each card is a single solid rounded rectangle with the
+ * rating strip separated from the body by a divider.
  */
 export default function Reviews({ tr }: { tr: Translator }) {
   const reviews = tr.raw<Review[]>('reviews.items');

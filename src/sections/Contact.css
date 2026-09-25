@@ -1,12 +1,9 @@
 .contact {
-  padding: 30px 0;
+  padding-bottom: 30px;
 }
 
-/* Same box treatment as the popup (Popup.css) — same padding scale and
-   breakpoints — so the inline and modal booking forms read as one UI. */
 .contact__panel {
   position: relative;
-  padding: 56px 0px;
 }
 
 .contact__header {
@@ -41,7 +38,7 @@
 
 @media (max-width: 639px) {
   .contact {
-    padding: 24px 0;
+    padding-bottom: 24px;
   }
 
   .contact__panel {

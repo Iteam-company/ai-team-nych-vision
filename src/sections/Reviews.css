@@ -1,5 +1,5 @@
 .reviews {
-  padding: 70px 0;
+  padding-bottom: 70px;
 }
 
 .reviews__grid {
@@ -9,29 +9,25 @@
   margin-top: 44px;
 }
 
-/* ---------- Card: black body + rating strip, joined with side notches ---------- */
+/* ---------- Card: one solid rounded rectangle, body + rating strip inside ---------- */
 .review {
   --review-bg: var(--color-bg-deep);
   display: flex;
   flex-direction: column;
-}
-
-.review__body,
-.review__rating {
-  position: relative;
   background: var(--review-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
+  overflow: hidden;
   transition: border-color 0.3s ease;
 }
 
-.review:hover .review__body,
-.review:hover .review__rating {
+.review:hover {
   border-color: var(--color-accent);
 }
 
 .review__body {
   /* Equal-height cards in a row: the body takes the slack, strips line up */
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -44,22 +40,16 @@
 .review__rating {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   padding: 24px 0;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0 0 var(--radius) var(--radius);
+  transition: border-color 0.3s ease;
 }
 
-/*
- * The two parts touch; cover their meeting borders between the rounded
- * corners so the card reads as one shape with a notch on each side.
- */
-.review__rating::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: var(--radius);
-  right: var(--radius);
-  height: 2px;
-  background: var(--review-bg);
+.review:hover .review__rating {
+  border-color: var(--color-accent);
 }
 
 .review__quote {
@@ -102,7 +92,7 @@
 /* ---------- Tablet and phone: one column ---------- */
 @media (max-width: 959px) {
   .reviews {
-    padding: 40px 0 5px;
+    padding-bottom: 40px;
   }
 
   .reviews .h-section {

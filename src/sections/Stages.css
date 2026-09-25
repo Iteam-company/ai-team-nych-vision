@@ -1,6 +1,6 @@
 .stages {
   position: relative;
-  padding-top: 132px;
+  padding-bottom: 80px;
 }
 
 .stages__orb {
@@ -71,7 +71,7 @@
   }
 
   .stages {
-    padding-top: 80px;
+    padding-bottom: 40px;
   }
 
   .stages__orb {
