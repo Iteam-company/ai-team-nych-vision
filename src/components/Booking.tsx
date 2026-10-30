@@ -77,7 +77,7 @@ export type BookingProps = {
  * layout — the open/closed state itself is simply ignored there, rather than
  * relying on any single element to size itself differently per breakpoint.
  *
- * Submission is mocked in src/lib/bookings.ts until a backend is wired up.
+ * Submissions go to /api/bookings, which forwards them to Telegram.
  */
 export default function Booking({ locale, labels, id }: BookingProps) {
   const intlLocale = INTL_LOCALE[locale] ?? "en-US";
@@ -153,6 +153,7 @@ export default function Booking({ locale, labels, id }: BookingProps) {
       submittedAt: new Date().toISOString(),
       // Cookies + source data, only if the visitor accepted cookies.
       visitor: collectVisitorData(),
+      website: String(form.get("website") ?? ""),
     });
 
     if (!result.ok) {
@@ -192,6 +193,15 @@ export default function Booking({ locale, labels, id }: BookingProps) {
 
   return (
     <form id={id} className="booking" onSubmit={onSubmit} noValidate>
+      {/* Honeypot for bots: off-screen and skipped by keyboard and screen readers. */}
+      <input
+        type="text"
+        name="website"
+        className="booking__hp"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
       <div className="booking__grid">
         {/* Calendar — date + time. Open by default: picking a slot is the first step. */}
         <Section

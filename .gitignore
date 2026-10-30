@@ -2,8 +2,11 @@ node_modules
 .next
 out
 dist
+temp_auto_push.bat
 next-env.d.ts
 *.tsbuildinfo
 .env*.local
-.env
 .DS_Store
+config.bat
+.gitignore
+branch_structure.json

@@ -1,6 +1,6 @@
 import type { VisitorData } from './cookies';
 
-/** Fixed daily slots. Kept here so both the picker and the mock share one list. */
+/** Fixed daily slots. Shared by the picker and the /api/bookings check. */
 export const TIME_SLOTS = ['09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00', '17:00'];
 
 export type Booking = {
@@ -17,52 +17,32 @@ export type Booking = {
   submittedAt: string;
   /** Cookie data and context; null when the visitor declined cookies. */
   visitor: VisitorData | null;
+  /** Honeypot: hidden from people, so only bots fill it in. */
+  website?: string;
 };
 
 export type BookingResult = { ok: true } | { ok: false; conflict: boolean };
 
-const NETWORK_DELAY_MS = 500;
-
-function delay(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+/**
+ * Which slots are already booked for a date. There is no shared calendar yet,
+ * so every slot is offered; the team confirms the exact time by email.
+ * TODO: return real availability once bookings are stored (e.g. Google Calendar).
+ */
+export async function fetchBookedTimes(_date: string): Promise<string[]> {
+  return [];
 }
 
-/**
- * Deterministic per date, so a given day always looks the same across a
- * reload instead of jumping around — a real endpoint would return whichever
- * slots are actually booked.
- */
-function mockTakenSlots(date: string): string[] {
-  let hash = 0;
-  for (const char of date) hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
-  const count = 1 + (hash % 2);
-  const taken = new Set<string>();
-  for (let i = 0; i < count; i++) taken.add(TIME_SLOTS[(hash >> (i * 3)) % TIME_SLOTS.length]);
-  return [...taken];
-}
-
-/**
- * Which slots are already booked for a date. Not wired to a backend yet —
- * TODO: replace with `GET /api/bookings/availability?date=...`.
- */
-export async function fetchBookedTimes(date: string): Promise<string[]> {
-  await delay(NETWORK_DELAY_MS - 200);
-  return mockTakenSlots(date);
-}
-
-/**
- * Sends a booking. Not wired to a backend yet — TODO: replace with
- * `POST /api/bookings`. In development it logs the full payload to the
- * console so the collected data can be checked, and occasionally reports a
- * conflict (as if someone else just took the slot) to exercise that path.
- */
+/** Sends a booking to /api/bookings, which forwards it to Telegram. */
 export async function submitBooking(booking: Booking): Promise<BookingResult> {
-  await delay(NETWORK_DELAY_MS);
-  if (process.env.NODE_ENV !== 'production') {
-    console.info('[booking] not sent yet — payload:', booking);
+  try {
+    const response = await fetch("/api/bookings", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(booking),
+    });
+    if (response.ok) return { ok: true };
+    return { ok: false, conflict: response.status === 409 };
+  } catch {
+    return { ok: false, conflict: false };
   }
-  if (mockTakenSlots(booking.date).includes(booking.time)) {
-    return { ok: false, conflict: true };
-  }
-  return { ok: true };
 }
