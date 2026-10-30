@@ -402,3 +402,12 @@
     min-height: 64px;
   }
 }
+
+/* Honeypot field: present for bots, invisible to people */
+.booking__hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
