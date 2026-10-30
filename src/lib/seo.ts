@@ -12,7 +12,7 @@ const SHARE_IMAGE = {
   url: '/og-image',
   width: 1200,
   height: 630,
-  alt: 'Nychvision — AI salespeople that answer, qualify and sell 24/7',
+  alt: 'Nychvision — a team of AI agents that runs your company 24/7',
 };
 
 export const VIEWPORT: Viewport = {

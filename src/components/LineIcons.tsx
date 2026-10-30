@@ -147,3 +147,113 @@ export function CardIcon(props: Omit<Props, 'title'>) {
     </Icon>
   );
 }
+
+/* ---------- Agent roles (24×24, used in the org chart and agent cards) ---------- */
+
+/** CEO agent: a compass — sets direction for the rest of the team. */
+export function CeoIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="CEO agent" viewBox="0 0 24 24" strokeWidth={1.6} {...props}>
+      <circle cx="12" cy="12" r="9.5" />
+      <path d="m15.8 8.2-2.4 5.2-5.2 2.4 2.4-5.2Z" />
+      <circle cx="12" cy="12" r="0.6" fill="currentColor" />
+    </Icon>
+  );
+}
+
+/** Sales agent: a chat bubble with a check — the conversation that closes. */
+export function SalesIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Sales agent" viewBox="0 0 24 24" strokeWidth={1.6} {...props}>
+      <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5Z" />
+      <path d="m8.5 9.6 2.3 2.2 4.7-4.6" />
+    </Icon>
+  );
+}
+
+/** Financial agent: a stack of coins next to a rising line. */
+export function FinanceIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Financial agent" viewBox="0 0 24 24" strokeWidth={1.6} {...props}>
+      <ellipse cx="8.5" cy="7" rx="5" ry="2.2" />
+      <path d="M3.5 7v4c0 1.2 2.2 2.2 5 2.2s5-1 5-2.2V7M3.5 11v4c0 1.2 2.2 2.2 5 2.2" />
+      <path d="M13.5 19.5 17 15l2 2 2.5-4" />
+    </Icon>
+  );
+}
+
+/** Engineering agent: a gear with code brackets. */
+export function EngineeringIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Engineering agent" viewBox="0 0 24 24" strokeWidth={1.6} {...props}>
+      <path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7" />
+      <circle cx="12" cy="12" r="6" />
+      <path d="m10.4 10.2-1.8 1.8 1.8 1.8M13.6 10.2l1.8 1.8-1.8 1.8" />
+    </Icon>
+  );
+}
+
+/** Analytics agent: bars under a magnifier. */
+export function AnalyticsIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Analytics agent" viewBox="0 0 24 24" strokeWidth={1.6} {...props}>
+      <path d="M3.5 20.5h17" />
+      <path d="M6 17v-4M10 17V9M14 17v-3" />
+      <circle cx="17.5" cy="7.5" r="3.2" />
+      <path d="m19.8 9.8 2 2" />
+    </Icon>
+  );
+}
+
+/** Custom agent: a puzzle piece — the part that fits your process. */
+export function CustomIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Custom agent" viewBox="0 0 24 24" strokeWidth={1.6} {...props}>
+      <path d="M4 8h3.2a2.3 2.3 0 1 1 4.6 0H15v3.2a2.3 2.3 0 1 1 0 4.6V19H4v-3.6a2.1 2.1 0 1 0 0-4.2Z" />
+      <path d="M18.5 3.5v4M16.5 5.5h4" />
+    </Icon>
+  );
+}
+
+/** The owner, holding the phone the whole team answers to. */
+export function OwnerIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Owner" viewBox="0 0 24 24" strokeWidth={1.6} {...props}>
+      <rect x="6.5" y="2.5" width="11" height="19" rx="2.5" />
+      <path d="M10.5 18.5h3" />
+      <circle cx="12" cy="9" r="2.2" />
+      <path d="M8.8 14.2a3.6 3.6 0 0 1 6.4 0" />
+    </Icon>
+  );
+}
+
+/** A generic chat window — stands in for a chat assistant app. */
+export function ChatAppIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Chat" viewBox="0 0 24 24" strokeWidth={1.6} {...props}>
+      <path d="M12 3.5c4.7 0 8.5 3.2 8.5 7.2S16.7 18 12 18c-1 0-2-.1-2.9-.4L4.5 20l1.2-3.6A6.9 6.9 0 0 1 3.5 10.7c0-4 3.8-7.2 8.5-7.2Z" />
+      <path d="M8.5 10.8h.01M12 10.8h.01M15.5 10.8h.01" strokeWidth={2.4} />
+    </Icon>
+  );
+}
+
+/** A sparkle — the second chat assistant. */
+export function SparkIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Assistant" viewBox="0 0 24 24" strokeWidth={1.6} {...props}>
+      <path d="M12 3c.6 4.3 2.7 6.4 7 7-4.3.6-6.4 2.7-7 7-.6-4.3-2.7-6.4-7-7 4.3-.6 6.4-2.7 7-7Z" />
+      <path d="M18.5 16.5c.2 1.4.9 2.1 2.3 2.3-1.4.2-2.1.9-2.3 2.3-.2-1.4-.9-2.1-2.3-2.3 1.4-.2 2.1-.9 2.3-2.3Z" />
+    </Icon>
+  );
+}
+
+/** A dashboard grid. */
+export function DashboardIcon(props: Omit<Props, 'title'>) {
+  return (
+    <Icon title="Dashboard" viewBox="0 0 24 24" strokeWidth={1.6} {...props}>
+      <rect x="3" y="3.5" width="18" height="17" rx="2.5" />
+      <path d="M3 8.5h18M8.5 8.5v12" />
+      <path d="m11.5 16.5 2.2-2.6 2 1.6 2.8-3.5" />
+    </Icon>
+  );
+}

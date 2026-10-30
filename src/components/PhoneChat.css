@@ -114,6 +114,52 @@
   --pc-tick: #53bdeb;
 }
 
+/* Owner ↔ CEO agent threads (control section). Neutral palettes that read as
+ * "a chat assistant" and "your dashboard" without copying any product's UI. */
+.pc__screen--chatgpt {
+  --pc-header: #1c1c1c;
+  --pc-canvas: #141414;
+  --pc-in: #232323;
+  --pc-out: #2f2f2f;
+  --pc-out-text: #ececec;
+  --pc-accent: #10a37f;
+  --pc-divider: rgba(255, 255, 255, 0.07);
+  --pc-tick: #10a37f;
+}
+
+.pc__screen--claude {
+  --pc-header: #20201e;
+  --pc-canvas: #1a1a18;
+  --pc-in: #262624;
+  --pc-out: #3b3a36;
+  --pc-out-text: #f2efe8;
+  --pc-accent: #d97757;
+  --pc-divider: rgba(255, 255, 255, 0.07);
+  --pc-tick: #d97757;
+}
+
+.pc__screen--agent {
+  --pc-header: #101c2a;
+  --pc-canvas: #0b131d;
+  --pc-in: #16263a;
+  --pc-out: #1388df;
+  --pc-out-text: #ffffff;
+  --pc-accent: #1388df;
+  --pc-divider: rgba(255, 255, 255, 0.08);
+  --pc-tick: #ffffff;
+}
+
+.pc__screen--dashboard {
+  --pc-header: #0f1a26;
+  --pc-canvas: #0a121c;
+  --pc-in: #15243a;
+  --pc-out: #1388df;
+  --pc-out-text: #ffffff;
+  --pc-accent: #43d1f8;
+  --pc-divider: rgba(255, 255, 255, 0.08);
+  --pc-tick: #ffffff;
+}
+
 /* Dynamic Island */
 .pc__island {
   position: absolute;
@@ -437,6 +483,19 @@
 
 .pc__tab--whatsapp.is-active {
   background: #128c7e;
+}
+
+.pc__tab--chatgpt.is-active {
+  background: #10a37f;
+}
+
+.pc__tab--claude.is-active {
+  background: #c96442;
+}
+
+.pc__tab--dashboard.is-active,
+.pc__tab--agent.is-active {
+  background: var(--color-accent);
 }
 
 @keyframes pc-pop {

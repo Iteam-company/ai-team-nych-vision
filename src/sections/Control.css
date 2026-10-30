@@ -1,0 +1,146 @@
+.control {
+  position: relative;
+  isolation: isolate;
+  padding: 70px 0 100px;
+}
+
+.control__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  column-gap: 90px;
+  align-items: center;
+}
+
+.control__title {
+  max-width: 640px;
+}
+
+.control__text {
+  max-width: 560px;
+  margin-top: 18px;
+  color: var(--color-text-muted);
+}
+
+.control__options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 620px;
+  margin-top: 36px;
+}
+
+.control__option {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 22px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+}
+
+.control__icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  color: #fff;
+}
+
+.control__option--chatgpt .control__icon {
+  background: #10a37f;
+}
+
+.control__option--claude .control__icon {
+  background: #c96442;
+}
+
+.control__option--dashboard .control__icon {
+  background: var(--color-accent);
+}
+
+.control__option-text {
+  margin-top: 6px;
+}
+
+.control__more {
+  margin-top: 20px;
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+.control__phone {
+  position: relative;
+  width: 300px;
+}
+
+/* Soft accent glow behind the device */
+.control__phone::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  z-index: -1;
+  width: 170%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(19, 136, 223, 0.38) 0%, rgba(19, 136, 223, 0.1) 40%, transparent 68%);
+  pointer-events: none;
+}
+
+.control__phone .pc__tabs {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 1199px) {
+  .control__grid {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    column-gap: 40px;
+  }
+
+  .control__phone {
+    width: 270px;
+  }
+}
+
+@media (max-width: 959px) {
+  .control {
+    padding: 50px 0 80px;
+  }
+
+  .control__grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 50px;
+    justify-items: center;
+  }
+
+  .control__info {
+    text-align: center;
+  }
+
+  .control__title,
+  .control__text,
+  .control__options {
+    margin-inline: auto;
+  }
+
+  .control__option {
+    text-align: left;
+  }
+
+}
+
+@media (max-width: 639px) {
+  .control__option {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .control__phone {
+    width: 250px;
+  }
+}

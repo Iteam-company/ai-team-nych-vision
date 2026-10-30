@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import AgentIcon, { type AgentId } from './AgentIcon';
 import BrandIcon from './BrandIcons';
+import { ChatAppIcon, DashboardIcon, SparkIcon } from './LineIcons';
 import './PhoneChat.css';
 
 /*
@@ -46,16 +48,33 @@ function keystrokeDelay(previous: string | undefined) {
   return delay;
 }
 
-type Message = { from: 'customer' | 'agent'; text: string };
+export type Message = { from: 'customer' | 'agent'; text: string };
 
-type Channel = {
-  id: 'telegram' | 'whatsapp';
+/** Messenger look of the screen. Each one has its own palette in PhoneChat.css. */
+export type ChannelId = 'telegram' | 'whatsapp' | 'chatgpt' | 'claude' | 'dashboard' | AgentId;
+
+export type Channel = {
+  id: ChannelId;
   tab: string;
   contact: string;
   subtitle: string;
   placeholder: string;
   messages: Message[];
+  /** How many messages are on screen when the thread starts. */
+  startAt?: number;
+  /** Palette from PhoneChat.css; defaults to the channel id. */
+  theme?: string;
 };
+
+/** Brand marks for messengers we can show; generic glyphs for the rest. */
+function ChannelIcon({ id, size }: { id: ChannelId; size: number }) {
+  if (id === 'telegram' || id === 'whatsapp') return <BrandIcon name={id} size={size} />;
+  if (id !== 'chatgpt' && id !== 'claude' && id !== 'dashboard') {
+    return <AgentIcon id={id} width={size} height={size} />;
+  }
+  const Glyph = id === 'chatgpt' ? ChatAppIcon : id === 'claude' ? SparkIcon : DashboardIcon;
+  return <Glyph width={size} height={size} />;
+}
 
 const CHANNELS: Channel[] = [
   {
@@ -110,15 +129,15 @@ const CHANNELS: Channel[] = [
 ];
 
 /** Walks a scripted thread: types the customer's side, then plays the reply. */
-function useScriptedThread(messages: Message[]) {
-  const [shown, setShown] = useState(START_AT);
+function useScriptedThread(messages: Message[], startAt: number) {
+  const [shown, setShown] = useState(startAt);
   const [draft, setDraft] = useState('');
   const [typing, setTyping] = useState(false);
 
   useEffect(() => {
     // Thread finished: hold it on screen, then start over.
     if (shown >= messages.length) {
-      const id = window.setTimeout(() => setShown(START_AT), LOOP_PAUSE_MS);
+      const id = window.setTimeout(() => setShown(startAt), LOOP_PAUSE_MS);
       return () => window.clearTimeout(id);
     }
 
@@ -155,7 +174,7 @@ function useScriptedThread(messages: Message[]) {
       window.clearTimeout(start);
       window.clearTimeout(done);
     };
-  }, [shown, messages]);
+  }, [shown, messages, startAt]);
 
   return { shown, draft, typing };
 }
@@ -185,12 +204,12 @@ function StatusBar() {
   );
 }
 
-function Screen({ channel }: { channel: Channel }) {
-  const { shown, draft, typing } = useScriptedThread(channel.messages);
+function Screen({ channel, typingLabel }: { channel: Channel; typingLabel: string }) {
+  const { shown, draft, typing } = useScriptedThread(channel.messages, channel.startAt ?? START_AT);
   const visible = channel.messages.slice(0, shown);
 
   return (
-    <div className={`pc__screen pc__screen--${channel.id}`}>
+    <div className={`pc__screen pc__screen--${channel.theme ?? channel.id}`}>
       <div className="pc__island" aria-hidden="true">
         <span className="pc__lens" />
       </div>
@@ -209,11 +228,11 @@ function Screen({ channel }: { channel: Channel }) {
           />
         </svg>
         <span className="pc__avatar">
-          <BrandIcon name={channel.id} size={20} />
+          <ChannelIcon id={channel.id} size={20} />
         </span>
         <span className="pc__who">
           <span className="pc__contact">{channel.contact}</span>
-          <span className="pc__subtitle">{typing ? 'typing…' : channel.subtitle}</span>
+          <span className="pc__subtitle">{typing ? typingLabel : channel.subtitle}</span>
         </span>
       </div>
 
@@ -243,7 +262,7 @@ function Screen({ channel }: { channel: Channel }) {
 
         {typing && (
           <div className="pc__row pc__row--in">
-            <p className="pc__bubble pc__bubble--typing" aria-label="typing">
+            <p className="pc__bubble pc__bubble--typing" aria-label={typingLabel}>
               <i />
               <i />
               <i />
@@ -275,9 +294,22 @@ function Screen({ channel }: { channel: Channel }) {
   );
 }
 
-export default function PhoneChat({ className }: { className?: string }) {
+type Props = {
+  className?: string;
+  /** Threads to play, one per tab. Defaults to the hero's sales conversations. */
+  channels?: Channel[];
+  tablistLabel?: string;
+  typingLabel?: string;
+};
+
+export default function PhoneChat({
+  className,
+  channels = CHANNELS,
+  tablistLabel = 'Messenger',
+  typingLabel = 'typing…',
+}: Props) {
   const [active, setActive] = useState(0);
-  const channel = CHANNELS[active];
+  const channel = channels[active];
 
   return (
     <div className={['pc', className].filter(Boolean).join(' ')}>
@@ -288,21 +320,21 @@ export default function PhoneChat({ className }: { className?: string }) {
         <span className="pc__btn pc__btn--power" aria-hidden="true" />
         <div className="pc__bezel">
           {/* Remounting on a tab change replays the thread from the top. */}
-          <Screen key={channel.id} channel={channel} />
+          <Screen key={channel.id} channel={channel} typingLabel={typingLabel} />
         </div>
       </div>
 
-      <div className="pc__tabs" role="tablist" aria-label="Messenger">
-        {CHANNELS.map((c, i) => (
+      <div className="pc__tabs" role="tablist" aria-label={tablistLabel}>
+        {channels.map((c, i) => (
           <button
             key={c.id}
             type="button"
             role="tab"
             aria-selected={i === active}
-            className={`pc__tab pc__tab--${c.id} ${i === active ? 'is-active' : ''}`}
+            className={`pc__tab pc__tab--${c.theme ?? c.id} ${i === active ? 'is-active' : ''}`}
             onClick={() => setActive(i)}
           >
-            <BrandIcon name={c.id} size={18} />
+            <ChannelIcon id={c.id} size={18} />
             {c.tab}
           </button>
         ))}

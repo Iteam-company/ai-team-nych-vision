@@ -31,10 +31,10 @@ export function GET() {
       >
         <div style={{ fontSize: 40, fontWeight: 700, color: ACCENT, letterSpacing: 2 }}>NYCHVISION</div>
         <div style={{ marginTop: 28, fontSize: 72, fontWeight: 700, lineHeight: 1.1, maxWidth: 900 }}>
-          AI salespeople that answer, qualify and sell — 24/7
+          A team of AI agents that runs your company — 24/7
         </div>
         <div style={{ marginTop: 32, fontSize: 30, opacity: 0.75 }}>
-          More conversions · Lower sales costs · 1000+ conversations at once
+          CEO · Sales · Finance · Engineering · Analytics · Custom
         </div>
       </div>
     ),

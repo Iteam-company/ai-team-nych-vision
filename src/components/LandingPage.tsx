@@ -2,14 +2,17 @@ import SpotlightTracker from "../effects/SpotlightTracker";
 import type { Locale } from "../i18n/config";
 import { getTranslator } from "../i18n/translator";
 import { getBookingProps } from "../lib/booking";
+import Agents from "../sections/Agents";
 import Cases from "../sections/Cases";
 import Contacts from "../sections/Contact";
+import Control from "../sections/Control";
 import Features from "../sections/Features";
 // import FinalCta from '../sections/FinalCta';
 import Footer from "../sections/Footer";
 import Hero from "../sections/Hero";
 import HowItWorks from "../sections/HowItWorks";
 import PainPoints from "../sections/PainPoints";
+import Pricing from "../sections/Pricing";
 import Results from "../sections/Results";
 import Reviews from "../sections/Reviews";
 import Stages from "../sections/Stages";
@@ -29,6 +32,8 @@ export default function LandingPage({ locale }: { locale: Locale }) {
       <SpotlightTracker />
       <main className="page">
         <Hero tr={tr} />
+        <Agents tr={tr} />
+        <Control tr={tr} />
         <Features tr={tr} />
         <PainPoints tr={tr} />
         <HowItWorks tr={tr} />
@@ -36,6 +41,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
           <Results tr={tr} />
           <Cases tr={tr} />
         </div>
+        <Pricing tr={tr} />
         <Team tr={tr} />
         <Stages tr={tr} />
         <Reviews tr={tr} />

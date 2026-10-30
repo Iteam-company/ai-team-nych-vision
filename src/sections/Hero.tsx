@@ -2,7 +2,7 @@ import AnimatedLine from "../components/AnimatedLine";
 import BrandLogo from "../components/BrandLogo";
 import Button from "../components/Button";
 import LanguageSwitcher from "../components/LanguageSwitcher";
-import PhoneChat from "../components/PhoneChat";
+import PhoneChat, { type Channel } from "../components/PhoneChat";
 import TechCanvas from "../effects/TechCanvas";
 import type { Translator } from "../i18n/translator";
 import "./Hero.css";
@@ -17,6 +17,12 @@ const TELEGRAM_URL = `https://t.me/${TELEGRAM_USER}`;
 
 export default function Hero({ tr }: { tr: Translator }) {
   const stats = tr.raw<string[]>("hero.stats");
+  const placeholder = tr.t("hero.chat.placeholder");
+  const subtitle = tr.t("hero.chat.subtitle");
+  // One tab per agent: the owner gives a task, the agent reports back.
+  const channels: Channel[] = tr
+    .raw<Omit<Channel, "placeholder" | "subtitle">[]>("hero.chat.threads")
+    .map((thread) => ({ ...thread, placeholder, subtitle, theme: "agent", startAt: 2 }));
 
   return (
     <section className="hero">
@@ -57,7 +63,12 @@ export default function Hero({ tr }: { tr: Translator }) {
           <p className="hero__cta-note t-lead">{tr.rich("hero.ctaNote")}</p>
         </div>
 
-        <PhoneChat className="hero__phone" />
+        <PhoneChat
+          className="hero__phone"
+          channels={channels}
+          tablistLabel={tr.t("hero.chat.tablist")}
+          typingLabel={tr.t("control.typing")}
+        />
       </div>
     </section>
   );

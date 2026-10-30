@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Nychvision — AI Sales Assistants",
-    "description": "Implementing AI managers is guaranteed to raise conversion and automate and optimize your sales processes."
+    "title": "Nychvision — A team of AI agents that runs your company",
+    "description": "CEO, sales, finance, engineering and analytics AI agents working as one system — 24/7, controlled from your phone. For businesses in the EU, US and Ukraine."
   },
   "common": {
     "language": "Language",
@@ -10,18 +10,401 @@
     "next": "Next"
   },
   "hero": {
-    "title": "Double the ROI of your sales team with an <accent>AI salesperson</accent>",
-    "subtitle": "The AI salesperson answers, qualifies and sells — 24/7, with no human factor",
+    "title": "Run your company with a <accent>team of AI agents</accent>",
+    "subtitle": "CEO, sales, finance, engineering and analytics agents work as one system — 24/7, managed from your phone",
     "stats": [
-      "<accent><b>+50%</b></accent> conversion → thanks to instant replies",
-      "<accent><b>–30%</b></accent> sales department costs → part of the work is done by AI",
-      "<accent><b>1000+</b></accent> conversations at once"
+      "<accent><b>6</b></accent> AI roles in one system → from sales to finance",
+      "<accent><b>24/7</b></accent> work → no sick days, burnout or turnover",
+      "<accent><b>1</b></accent> chat to run them all → ChatGPT, Claude or your own dashboard"
     ],
-    "cta": "Get a test salesperson",
-    "ctaNote": "We'll build a test AI salesperson <b>FOR FREE</b>"
+    "cta": "Get a free test agent",
+    "ctaNote": "We'll build a test AI sales agent <b>FOR FREE</b>",
+    "chat": {
+      "tablist": "Agents",
+      "subtitle": "AI agent · online",
+      "placeholder": "Message the agent",
+      "threads": [
+        {
+          "id": "ceo",
+          "tab": "CEO",
+          "contact": "CEO agent",
+          "messages": [
+            {
+              "from": "customer",
+              "text": "What's the plan for today?"
+            },
+            {
+              "from": "agent",
+              "text": "3 priorities: close 2 hot leads, collect overdue invoices, launch the Friday promo. Sales and Finance are on it."
+            },
+            {
+              "from": "customer",
+              "text": "Anything that needs me?"
+            },
+            {
+              "from": "agent",
+              "text": "One approval: a 10% discount on a $12,000 order. The margin stays at 31%."
+            },
+            {
+              "from": "customer",
+              "text": "Approve"
+            },
+            {
+              "from": "agent",
+              "text": "Done. The Sales agent has sent the offer — I'll report when the client replies."
+            }
+          ]
+        },
+        {
+          "id": "sales",
+          "tab": "Sales",
+          "contact": "Sales agent",
+          "messages": [
+            {
+              "from": "customer",
+              "text": "How did the night go?"
+            },
+            {
+              "from": "agent",
+              "text": "37 new leads: 11 qualified, 6 meetings booked, 2 deposits paid."
+            },
+            {
+              "from": "customer",
+              "text": "Who's the hottest one?"
+            },
+            {
+              "from": "agent",
+              "text": "Anna, Marina Residences — 2-bedroom, $900k budget, ready to sign this week."
+            },
+            {
+              "from": "customer",
+              "text": "Book her a call with me tomorrow"
+            },
+            {
+              "from": "agent",
+              "text": "Booked for 11:00 tomorrow. Her card and the full conversation are in the CRM."
+            }
+          ]
+        },
+        {
+          "id": "finance",
+          "tab": "Finance",
+          "contact": "Financial agent",
+          "messages": [
+            {
+              "from": "customer",
+              "text": "How's cash flow this month?"
+            },
+            {
+              "from": "agent",
+              "text": "Income $48,200, expenses $31,900. Cash covers 7 weeks of costs."
+            },
+            {
+              "from": "customer",
+              "text": "Who hasn't paid?"
+            },
+            {
+              "from": "agent",
+              "text": "2 invoices, $3,400 in total, 10 days overdue. Reminders went out this morning."
+            },
+            {
+              "from": "customer",
+              "text": "Tell me if they're still unpaid on Monday"
+            },
+            {
+              "from": "agent",
+              "text": "Noted. I'll also flag it in the CEO agent's Monday brief."
+            }
+          ]
+        },
+        {
+          "id": "analytics",
+          "tab": "Analytics",
+          "contact": "Analytics agent",
+          "messages": [
+            {
+              "from": "customer",
+              "text": "Why did leads drop this week?"
+            },
+            {
+              "from": "agent",
+              "text": "Instagram cost per lead is up 18% — the new ad set converts 2× worse."
+            },
+            {
+              "from": "customer",
+              "text": "What works best right now?"
+            },
+            {
+              "from": "agent",
+              "text": "Google Search: the lowest cost per lead, and 34% of those leads get to a meeting."
+            },
+            {
+              "from": "customer",
+              "text": "Move budget there"
+            },
+            {
+              "from": "agent",
+              "text": "Plan sent to the CEO agent: +20% to Search, the weak Instagram set paused."
+            }
+          ]
+        },
+        {
+          "id": "engineering",
+          "tab": "Tech",
+          "contact": "Engineering agent",
+          "messages": [
+            {
+              "from": "customer",
+              "text": "Connect our CRM to the invoicing tool"
+            },
+            {
+              "from": "agent",
+              "text": "On it. Step 1 of 3: mapping deals, clients and amounts."
+            },
+            {
+              "from": "customer",
+              "text": "How long will it take?"
+            },
+            {
+              "from": "agent",
+              "text": "About 2 hours. I'll test it on 5 past orders before switching it on."
+            },
+            {
+              "from": "customer",
+              "text": "OK, go"
+            },
+            {
+              "from": "agent",
+              "text": "Done ✓ Orders now create invoices automatically — 3 manual steps gone."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "agents": {
+    "title": "Not one bot — <accent>an AI team</accent> with clear roles",
+    "subtitle": "Every agent has its own role, tools and limits — like an employee with a job description. The CEO agent hands out tasks, checks the results and reports to you.",
+    "owner": "You",
+    "ownerNote": "phone · chat · dashboard",
+    "legendTasks": "Tasks",
+    "legendReports": "Reports",
+    "doesLabel": "What it does",
+    "replacesLabel": "Takes over",
+    "reportLabel": "Reports like this",
+    "items": [
+      {
+        "id": "ceo",
+        "name": "CEO agent",
+        "role": "Runs the team",
+        "text": "Turns your goals into tasks, assigns them to the other agents, follows deadlines and quality — and only brings you the decisions that are really yours.",
+        "does": [
+          "Breaks goals into weekly plans and tasks",
+          "Assigns work to agents and checks the result",
+          "Morning brief and alerts when something goes off-plan",
+          "Asks for your approval above the limits you set"
+        ],
+        "replaces": "Operations manager, assistant",
+        "report": "Sales are 12% behind plan this week — the Sales agent is re-contacting 48 warm leads today."
+      },
+      {
+        "id": "sales",
+        "name": "Sales agent",
+        "role": "Sells 24/7",
+        "text": "Answers every inquiry in messengers within seconds, qualifies the client, handles objections and brings them to a booking, a meeting or a payment.",
+        "does": [
+          "Replies to 100% of leads in Telegram, WhatsApp, Instagram and web chat",
+          "Qualifies, handles objections, books meetings",
+          "Sends payment links and moves deals in your CRM",
+          "Hands hot or tricky clients to a human"
+        ],
+        "replaces": "First-line sales managers, SDRs",
+        "report": "37 new leads overnight: 11 qualified, 6 meetings booked, 2 deposits paid."
+      },
+      {
+        "id": "finance",
+        "name": "Financial agent",
+        "role": "Keeps money under control",
+        "text": "Tracks income, expenses and cash flow every day, issues invoices, chases late payers and warns you about cash gaps before they happen.",
+        "does": [
+          "Daily view of income, expenses and cash flow",
+          "Issues invoices and reminds about overdue payments",
+          "Categorises transactions from your bank and accounting",
+          "P&L and cash-gap forecast for the coming weeks"
+        ],
+        "replaces": "Bookkeeping assistant, routine finance control",
+        "report": "Two invoices are 10 days overdue — reminders sent. Cash covers 7 weeks of costs."
+      },
+      {
+        "id": "engineering",
+        "name": "Engineering agent",
+        "role": "Handles complex tasks",
+        "text": "Takes on multi-step technical work: connects your tools, builds automations, handles technical requests and breaks big tasks into steps it carries out.",
+        "does": [
+          "Builds automations and integrations between your tools",
+          "Handles technical requests, documents and specs",
+          "Splits complex projects into steps and executes them",
+          "Monitors systems and reports what broke and why"
+        ],
+        "replaces": "Routine work of a technical specialist",
+        "report": "The CRM ↔ invoicing sync is live. 3 manual steps removed from every order."
+      },
+      {
+        "id": "analytics",
+        "name": "Analytics agent",
+        "role": "Turns data into decisions",
+        "text": "Pulls data from your CRM, ads, website and finances, builds the reports you used to wait for, finds funnel leaks and explains the “why” in plain language.",
+        "does": [
+          "Collects data from CRM, ads, website and finance",
+          "Weekly reports and live dashboards",
+          "Finds funnel leaks and unusual changes",
+          "Answers questions about your numbers in plain words"
+        ],
+        "replaces": "Data and marketing analyst",
+        "report": "Cost per lead on Instagram is up 18% — the new ad set converts 2× worse."
+      },
+      {
+        "id": "custom",
+        "name": "Custom agent",
+        "role": "Built for your process",
+        "text": "A unique agent designed around how your business works — recruiting, support, procurement, logistics, content or anything repetitive.",
+        "does": [
+          "Designed after a free audit of your processes",
+          "Connected to your own systems and data",
+          "Joins the team and takes tasks from the CEO agent",
+          "Grows with new skills as your business changes"
+        ],
+        "replaces": "Any repetitive role",
+        "report": "12 candidates screened, 4 interviews in your calendar for Tuesday."
+      }
+    ],
+    "honest": "Agents take over routine work and decisions within the limits you set. Strategy, key hires and final approvals stay with you."
+  },
+  "control": {
+    "title": "Run your AI team <accent>from your phone</accent>",
+    "text": "No new software to learn. Give tasks, get reports and approve decisions in the app you already use.",
+    "options": [
+      {
+        "id": "chatgpt",
+        "title": "ChatGPT",
+        "text": "Talk to your CEO agent right inside ChatGPT — tasks, reports and approvals."
+      },
+      {
+        "id": "claude",
+        "title": "Claude",
+        "text": "The same control from Claude on your phone or laptop."
+      },
+      {
+        "id": "dashboard",
+        "title": "Custom dashboard",
+        "text": "Your own web dashboard: live numbers, what each agent is doing, one-tap approvals."
+      }
+    ],
+    "more": "Telegram, WhatsApp or Slack work too.",
+    "tablist": "Control channel",
+    "typing": "typing…",
+    "placeholder": "Message your CEO agent",
+    "threads": [
+      {
+        "id": "chatgpt",
+        "tab": "ChatGPT",
+        "contact": "CEO agent",
+        "subtitle": "in ChatGPT",
+        "messages": [
+          {
+            "from": "customer",
+            "text": "Morning. How did yesterday go?"
+          },
+          {
+            "from": "agent",
+            "text": "Revenue $4,860, 9% above plan. Sales agent closed 7 deals, 2 hot leads are waiting for your call."
+          },
+          {
+            "from": "customer",
+            "text": "Any problems?"
+          },
+          {
+            "from": "agent",
+            "text": "Two invoices are 10 days overdue — Finance agent sent reminders. Instagram cost per lead is up 18%."
+          },
+          {
+            "from": "customer",
+            "text": "Pause that Instagram ad set"
+          },
+          {
+            "from": "agent",
+            "text": "Paused. Analytics agent will send the weekly report at 18:00."
+          }
+        ]
+      },
+      {
+        "id": "claude",
+        "tab": "Claude",
+        "contact": "CEO agent",
+        "subtitle": "in Claude",
+        "messages": [
+          {
+            "from": "customer",
+            "text": "Launch a Black Friday offer by Thursday"
+          },
+          {
+            "from": "agent",
+            "text": "Plan: Analytics picks the products, Finance checks the margin, Sales messages past buyers. Approve?"
+          },
+          {
+            "from": "customer",
+            "text": "Yes, but keep the margin above 30%"
+          },
+          {
+            "from": "agent",
+            "text": "Got it. Max discount is 15% — anything deeper drops the margin under 30%."
+          },
+          {
+            "from": "customer",
+            "text": "OK, go"
+          },
+          {
+            "from": "agent",
+            "text": "Started. I'll report progress every evening and ping you if anything needs a decision."
+          }
+        ]
+      },
+      {
+        "id": "dashboard",
+        "tab": "Dashboard",
+        "contact": "Approvals",
+        "subtitle": "your dashboard",
+        "messages": [
+          {
+            "from": "agent",
+            "text": "Finance agent asks: pay the supplier invoice of $3,200 due tomorrow?"
+          },
+          {
+            "from": "customer",
+            "text": "Approve"
+          },
+          {
+            "from": "agent",
+            "text": "Paid. Cash forecast updated — still 7 weeks covered."
+          },
+          {
+            "from": "agent",
+            "text": "Engineering agent finished the CRM ↔ invoicing sync. Turn it on?"
+          },
+          {
+            "from": "customer",
+            "text": "Turn it on"
+          },
+          {
+            "from": "agent",
+            "text": "Done. Orders now create invoices automatically."
+          }
+        ]
+      }
+    ]
   },
   "features": {
-    "agentTitle": "An AI agent that:",
+    "agentTitle": "Sales agent, in detail:",
     "agentText": "Talks to and qualifies clients, books meetings and services, takes payments and collects reviews, moves leads through your CRM, works 24/7",
     "integrationsTitle": "Integrates",
     "integrationsText": "with all popular platforms",
@@ -125,25 +508,37 @@
     "title": "Right after implementation you get:",
     "cards": [
       {
-        "value": ["+", "40", "%"],
+        "value": [
+          "+",
+          "40",
+          "%"
+        ],
         "caption": "conversion",
         "title": "+30–50% lead conversion",
         "text": "thanks to instant response and guiding to the next step (booking/meeting)."
       },
       {
-        "value": ["savings"],
+        "value": [
+          "savings"
+        ],
         "caption": "on sales team payroll",
         "title": "The main workload shifts",
         "text": "from managers to AI."
       },
       {
-        "value": ["5x"],
+        "value": [
+          "5x"
+        ],
         "caption": "lower cost",
         "title": "Lower cost",
         "text": "of a qualified client by 3–6x."
       },
       {
-        "value": ["24", "/", "7"],
+        "value": [
+          "24",
+          "/",
+          "7"
+        ],
         "caption": "operation",
         "title": "Thousands of conversations at once",
         "text": "24/7 and in any language in the world — no queues."
@@ -169,6 +564,106 @@
           "Booking a discovery call and creating the deal, with the full brief, in HubSpot"
         ]
       }
+    ]
+  },
+  "pricing": {
+    "title": "Honest pricing",
+    "subtitle": "A one-time setup and a monthly fee for hosting, support, monitoring and improvements. These are starting prices — the exact quote comes after a free audit.",
+    "agentsTitle": "Per agent",
+    "setupLabel": "Setup",
+    "monthlyLabel": "Monthly",
+    "from": "from",
+    "perMonth": "/mo",
+    "agents": [
+      {
+        "name": "Sales agent",
+        "setup": "$1,500",
+        "monthly": "$390"
+      },
+      {
+        "name": "Analytics agent",
+        "setup": "$1,500",
+        "monthly": "$290"
+      },
+      {
+        "name": "Financial agent",
+        "setup": "$2,000",
+        "monthly": "$390"
+      },
+      {
+        "name": "CEO agent",
+        "setup": "$2,000",
+        "monthly": "$490",
+        "note": "works with 2+ agents"
+      },
+      {
+        "name": "Engineering agent",
+        "setup": "$2,500",
+        "monthly": "$490"
+      },
+      {
+        "name": "Custom agent",
+        "setup": "$3,000",
+        "monthly": "$390",
+        "note": "scoped after the audit"
+      }
+    ],
+    "packsTitle": "Packs",
+    "popular": "Most popular",
+    "save": "Save",
+    "packs": [
+      {
+        "name": "Sales team",
+        "for": "For businesses that lose leads and want to see why",
+        "agents": "Sales + Analytics",
+        "setup": "$2,500",
+        "monthly": "$590",
+        "save": "$500 on setup",
+        "items": [
+          "Messenger + CRM integration",
+          "Weekly sales report",
+          "Control via ChatGPT, Claude or Telegram"
+        ]
+      },
+      {
+        "name": "Core team",
+        "for": "For owners who want daily control without micromanaging",
+        "agents": "CEO + Sales + Finance + Analytics",
+        "setup": "$5,900",
+        "monthly": "$1,290",
+        "save": "$1,100 on setup",
+        "popular": true,
+        "items": [
+          "Everything in Sales team",
+          "Morning brief and approvals from your phone",
+          "Cash-flow tracking and invoice reminders"
+        ]
+      },
+      {
+        "name": "AI company",
+        "for": "For teams that want routine work run by agents end to end",
+        "agents": "All 5 agents + 1 custom agent",
+        "setup": "$10,500",
+        "monthly": "$2,090",
+        "save": "$2,000 on setup",
+        "items": [
+          "Everything in Core team",
+          "Custom dashboard included",
+          "Priority support and monthly strategy call"
+        ]
+      }
+    ],
+    "custom": {
+      "name": "Your own set",
+      "text": "Any combination of agents, your systems, your rules. We'll price it after a free audit.",
+      "cta": "Get a quote"
+    },
+    "packCta": "Discuss this pack",
+    "notes": [
+      "AI model and messenger fees are billed at cost — usually $20–150 per agent per month, depending on volume.",
+      "Custom dashboard on its own: from $1,200 setup.",
+      "Prices exclude VAT. We invoice in EUR, USD or UAH.",
+      "The first test sales agent is free — you see it working before you pay."
     ]
   },
   "team": {

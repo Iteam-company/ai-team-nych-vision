@@ -72,11 +72,11 @@
 }
 
 .hero__stat:nth-child(2) {
-  max-width: 270px;
+  max-width: 330px;
 }
 
 .hero__stat:nth-child(3) {
-  max-width: 330px;
+  max-width: 400px;
 }
 
 .hero__cta {
@@ -239,4 +239,24 @@
   .hero__cta-btn {
     width: 100% !important;
   }
+}
+
+/* Five agent tabs under the hero phone: compact pills, wrapping when narrow */
+.hero__phone .pc__tabs {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  width: 530px;
+  max-width: calc(100vw - 2 * var(--gutter));
+}
+
+.hero__phone .pc__tab {
+  gap: 5px;
+  padding: 7px 11px;
+  font-size: 13px;
+}
+
+.hero__phone .pc__tab svg {
+  width: 15px;
+  height: 15px;
 }
